@@ -15,33 +15,33 @@
          point="org.eclipse.ui.preferencePages">
       <page
             name="Jad"
-            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage/JdtDecompiler"
+            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage.JdtDecompiler"
             class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencePage"
-            id="Jad">
+            id="net.sf.jdtdecompiler.Jad">
       </page>
       <page
             name="Formatting"
-            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage/JdtDecompiler/Jad"
+            category="net.sf.jdtdecompiler.Jad"
             class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencePageFormat"
-            id="net.sf.jdtdecompiler.jad.preferences.Formatting">
+            id="net.sf.jdtdecompiler.Jad.Format">
       </page>
       <page
             name="Directives"
-            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage/JdtDecompiler/Jad"
+            category="net.sf.jdtdecompiler.Jad"
             class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencePageDirect"
-            id="net.sf.jdtdecompiler.jad.preferences.Formatting">
+            id="net.sf.jdtdecompiler.Jad.Direct">
       </page>
       <page
             name="Debug"
-            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage/JdtDecompiler/Jad"
+            category="net.sf.jdtdecompiler.Jad"
             class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencePageDebug"
-            id="net.sf.jdtdecompiler.jad.preferences.Formatting">
+            id="net.sf.jdtdecompiler.Jad.Debug">
       </page>
       <page
             name="Misc"
-            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage/JdtDecompiler/Jad"
+            category="net.sf.jdtdecompiler.Jad"
             class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencePageMisc"
-            id="net.sf.jdtdecompiler.jad.preferences.Formatting">
+            id="net.sf.jdtdecompiler.Jad.Misc">
       </page>
    </extension>
 </plugin>

@@ -34,7 +34,7 @@
             name="Decompilers"
             category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage"
             class="net.sf.jdtdecompiler.ui.preferences.JdtDecompilerPreferencePage"
-            id="JdtDecompiler">
+            id="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage.JdtDecompiler">
       </page>
    </extension>
 
