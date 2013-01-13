@@ -7,8 +7,10 @@ import net.sf.jdtdecompiler.core.DecompilerType;
 import net.sf.jdtdecompiler.core.IDecompiler;
 
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.Preferences.IPropertyChangeListener;
-import org.eclipse.core.runtime.Preferences.PropertyChangeEvent;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences.IPreferenceChangeListener;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChangeEvent;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jdt.core.IClassFile;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.JavaModelException;
@@ -35,15 +37,12 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
 
     private IClassFileEditorInput classEditorInput;
 
-    private final IPropertyChangeListener propertyChangeListener = new IPropertyChangeListener() {
-        public void propertyChange(PropertyChangeEvent event) {
-            if (event.getProperty().equals(
-                    JdtDecompilerUiPlugin.PREF_DECOMPILER)) {
-                updateDecompilerInSourceMapper(JdtDecompilerUiPlugin
-                        .getPreferredDecompiler());
+    private final IPreferenceChangeListener preferenceChangeListener = new IPreferenceChangeListener() {
+        public void preferenceChange(PreferenceChangeEvent event) {
+            if (event.getKey().equals(JdtDecompilerUiPlugin.PREF_DECOMPILER)) {
+                updateDecompilerInSourceMapper(JdtDecompilerUiPlugin.getPreferredDecompiler());
             }
-        }
-    };
+        }};
 
     protected IEditorInput transformEditorInput(IEditorInput input) {
         input = super.transformEditorInput(input);
@@ -93,10 +92,11 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
     }
 
     private void hijackSourceMapper(PackageFragmentRoot root) {
+        IEclipsePreferences preferences = InstanceScope.INSTANCE.getNode(JdtDecompilerUiPlugin.PLUGIN_ID);
+        preferences.addPreferenceChangeListener(preferenceChangeListener);
+        
         try {
             SourceMapper mapper = root.getSourceMapper();
-            JdtDecompilerUiPlugin.getDefault().getPluginPreferences()
-                    .addPropertyChangeListener(propertyChangeListener);
             if (!(mapper instanceof DecompiledSourceMapper)) {
                 IDecompiler decompiler = JdtDecompilerUiPlugin
                         .getPreferredDecompiler();
@@ -158,8 +158,8 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
     }
 
     public void dispose() {
-        JdtDecompilerUiPlugin.getDefault().getPluginPreferences()
-                .removePropertyChangeListener(propertyChangeListener);
+	    IEclipsePreferences preferences = InstanceScope.INSTANCE.getNode(JdtDecompilerUiPlugin.PLUGIN_ID);
+	    preferences.removePreferenceChangeListener(preferenceChangeListener);
         super.dispose();
     }
 

@@ -44,4 +44,9 @@
             id="net.sf.jdtdecompiler.Jad.Misc">
       </page>
    </extension>
+   
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencesInitializer"/>
+   </extension>
 </plugin>

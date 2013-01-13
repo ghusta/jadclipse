@@ -38,4 +38,9 @@
       </page>
    </extension>
 
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="net.sf.jdtdecompiler.ui.preferences.JdtDecompilerPreferencesInitializer"/>
+   </extension>
+
 </plugin>

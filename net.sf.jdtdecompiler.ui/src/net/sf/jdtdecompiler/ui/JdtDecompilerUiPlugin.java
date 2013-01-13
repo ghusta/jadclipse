@@ -72,11 +72,6 @@ public class JdtDecompilerUiPlugin extends AbstractUIPlugin {
         getDefault().getLog().log(new Status(Status.ERROR, PLUGIN_ID, 0, message, t));
     }
 
-    protected void initializeDefaultPreferences(IPreferenceStore store) {
-        store.setDefault(PREF_USE_ECLIPSE_FORMATTER, false);
-        store.setDefault(PREF_DECOMPILER, "net.sf.jdtdecompiler.jad.JadDecompiler");
-    }
-
     /**
      * @return Lazily created decompiler instance.
      */

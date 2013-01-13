@@ -2,6 +2,7 @@ package net.sf.jdtdecompiler.core;
 
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -36,7 +37,7 @@ public class JdtDecompilerCorePlugin extends Plugin {
      */
     public void stop(BundleContext context) throws Exception {
         plugin = null;
-        savePluginPreferences();
+		InstanceScope.INSTANCE.getNode(PLUGIN_ID).flush();
         super.stop(context);
     }
 

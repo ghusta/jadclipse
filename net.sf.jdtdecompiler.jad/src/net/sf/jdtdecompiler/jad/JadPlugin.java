@@ -1,7 +1,6 @@
 package net.sf.jdtdecompiler.jad;
 
 import org.eclipse.core.runtime.Status;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -64,23 +63,7 @@ public class JadPlugin extends AbstractUIPlugin {
                 new Status(Status.ERROR, PLUGIN_ID, 0, message, t));
     }
 
-    protected void initializeDefaultPreferences(IPreferenceStore store) {
-        store.setDefault(PREF_CMD, "jad");
-        store.setDefault(PREF_TMP_DIR, System.getProperty("user.home") + "/."
-                + JadPlugin.PLUGIN_ID);
-        store.setDefault(PREF_REUSE_BUFFER, true); // since 2.02
-        store.setDefault(PREF_IGNORE_EXISTING, false);
-        store.setDefault(IJadOptions.OPTION_INDENT_SPACE, 4);
-        store.setDefault(IJadOptions.OPTION_IRADIX, 10);
-        store.setDefault(IJadOptions.OPTION_LRADIX, 10);
-        store.setDefault(IJadOptions.OPTION_SPLITSTR_MAX, 0); // disable
-        store.setDefault(IJadOptions.OPTION_PI, 0); // disable
-        store.setDefault(IJadOptions.OPTION_PV, 0); // disable
-    }
-
     public String getTmpDir() {
         return getPreferenceStore().getString(JadPlugin.PREF_TMP_DIR);
-
     }
-
 }
