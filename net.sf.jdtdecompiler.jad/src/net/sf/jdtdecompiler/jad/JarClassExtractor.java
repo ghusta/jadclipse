@@ -37,7 +37,7 @@ public class JarClassExtractor {
         try {
             prefix = packagePath + className;
             ZipFile archive = new ZipFile(archivePath);
-            Enumeration entries = archive.entries();
+            Enumeration<? extends ZipEntry> entries = archive.entries();
             while (entries.hasMoreElements()) {
                 ZipEntry entry = (ZipEntry) entries.nextElement();
                 String entryName = entry.getName();

@@ -1,7 +1,5 @@
 package net.sf.jdtdecompiler.core;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.Map;
 
 import org.eclipse.core.resources.IResource;
@@ -17,7 +15,7 @@ public class DecompiledSourceMapper extends SourceMapper {
     private IDecompiler decompiler;
 
     public DecompiledSourceMapper(IPath sourcePath, String rootPath,
-            Map options, IPackageFragmentRoot root, IDecompiler decompiler) {
+            Map<?, ?> options, IPackageFragmentRoot root, IDecompiler decompiler) {
         super(sourcePath, rootPath, options);
         this.root = root;
         this.decompiler = decompiler;

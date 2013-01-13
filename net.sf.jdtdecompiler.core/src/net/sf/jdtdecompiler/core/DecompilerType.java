@@ -92,7 +92,7 @@ public class DecompilerType {
         IExtension[] extensions = Platform.getExtensionRegistry()
                 .getExtensionPoint(JdtDecompilerCorePlugin.PLUGIN_ID, "decompilers")
                 .getExtensions();
-        List found = new ArrayList();
+        List<DecompilerType> found = new ArrayList<DecompilerType>();
         for (int i = 0; i < extensions.length; i++) {
             IConfigurationElement[] configElements = extensions[i]
                     .getConfigurationElements();
@@ -102,9 +102,7 @@ public class DecompilerType {
                     found.add(proxy);
             }
         }
-        cachedTypes = (DecompilerType[]) found.toArray(new DecompilerType[found
-                .size()]);
-
+        cachedTypes = found.toArray(new DecompilerType[found.size()]);
         return cachedTypes;
     }
     

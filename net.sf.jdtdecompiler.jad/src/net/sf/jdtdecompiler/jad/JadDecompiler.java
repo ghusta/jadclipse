@@ -141,7 +141,7 @@ public class JadDecompiler implements IDecompiler {
     }
 
     private String[] buildCmdLine(String classFileName) {
-        ArrayList cmdLine = new ArrayList();
+        ArrayList<String> cmdLine = new ArrayList<String>();
         IPreferenceStore settings = JadPlugin.getDefault().getPreferenceStore();
 
         // command and special options

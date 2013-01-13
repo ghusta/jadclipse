@@ -113,7 +113,7 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
                     rootPath = iRootPath.toOSString();
                 }
 
-                Map options = root.getJavaProject().getOptions(true);
+                Map<?, ?> options = root.getJavaProject().getOptions(true);
 
                 DecompiledSourceMapper newMapper = new DecompiledSourceMapper(
                         sourcePath, rootPath, options, root, decompiler);
