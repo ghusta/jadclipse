@@ -1,0 +1,52 @@
+# This is a sample script file to obfuscate my project
+
+# The class path should include everything that is needed to run the
+# project.  Don't forget the java base classes (rt.jar or classes.zip).
+classpath = "c:\\jdk1.2\\jre\\lib\\rt.jar","d:\\project\\java"
+ 
+# The jar, zip file or directory in which the obfuscated class files
+# should be written.
+dest = "obfuscated.zip"
+
+# Write the reverse translation table to translat.tbl.  With the help of
+# this table you can later undo the renaming.
+revtable = "translat.tbl"
+
+strip = "unreach","lvt","inner"
+
+# this variable will tell, which classes and packages should be included
+# in the obfuscated.jar package.
+load = new WildCard { value = "org.myorg.myproject" },
+       new WildCard { value = "org.myorg.mylib*" },
+       new WildCard { value = "org.otherorg.shortlib" }
+
+# this variable will tell, which classes and packages must not be
+# renamed.
+preserve = new WildCard { value = "org.myorg.ApplicationClass.main.*" },
+           new WildCard { value = "org.myorg.AppletClass.<init>.()V" },
+           new WildCard { value = "org.resources.BundleClass*.<init>.()V" },
+           new MultiIdentifierMatcher { 
+               and = new WildCard { value = "org.myorg.publiclib.*" },
+	             new ModifierMatcher { access = "PUBLIC" }
+	   }
+
+# There are different renamers currently.  This is just an example that
+# produces very good obfuscated code, that is still valid bytecode.
+renamer = new StrongRenamer {
+  charsetStart = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+  charsetPart = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789_$"
+  charsetPackage = "abcdefghijklmnopqrstuvwxyz"
+  charsetClass = "abcdefghijklmnopqrstuvwxyz"
+}
+
+# The constant analyzer does a great job to remove constant fields and
+# deadcode.  E.g. if you obfuscate the decompiler applet it will
+# remove the whole debugging code, since the applet doesn't need it.
+analyzer = new ConstantAnalyzer
+
+# The LocalOptimizer will reorder local variables to use fewer slots.
+# It may still have some bugs, so remove it if your applet doesn't
+# work (and send me the class).
+# The RemovePopAnalyzer will remove instructions that were optimized
+# away by the ConstantAnalyzer and LocalOptimizer.
+post = new LocalOptimizer, new RemovePopAnalyzer

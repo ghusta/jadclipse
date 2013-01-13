@@ -1,0 +1,26 @@
+# This dependency file is automatically created by ../../javaDependencies.pl from class files.
+# Do not edit.
+
+Analyzer.class: Analyzer.java
+Applet.class: Applet.java Window.java
+ClassAnalyzer.class: ClassAnalyzer.java Scope.java Declarable.java ClassDeclarer.java FieldAnalyzer.java MethodAnalyzer.java ../type/MethodType.java ../flow/StructuredBlock.java ../bytecode/ClassInfo.java Options.java ../expr/Expression.java ../expr/ThisOperator.java ../bytecode/InnerClassInfo.java ../GlobalOptions.java ProgressListener.java ImportHandler.java ../flow/TransformConstructors.java TabbedPrintWriter.java ../util/SimpleSet.java LocalInfo.java ../bytecode/MethodInfo.java ../bytecode/FieldInfo.java OuterValues.java ../AssertError.java
+ClassDeclarer.class: ClassDeclarer.java
+DeadCodeAnalysis.class: DeadCodeAnalysis.java ../bytecode/BytecodeInfo.java ../bytecode/Instruction.java ../bytecode/Handler.java
+Declarable.class: Declarable.java
+Decompiler.class: Decompiler.java ../bytecode/SearchPath.java Options.java ../GlobalOptions.java ../bytecode/ClassInfo.java ImportHandler.java TabbedPrintWriter.java ClassAnalyzer.java
+FieldAnalyzer.class: FieldAnalyzer.java Analyzer.java ../expr/OuterLocalOperator.java LocalInfo.java ../expr/Expression.java ImportHandler.java TabbedPrintWriter.java ClassAnalyzer.java ../bytecode/FieldInfo.java ../type/Type.java ../expr/ConstOperator.java
+ImportHandler.class: ImportHandler.java ../bytecode/ClassInfo.java TabbedPrintWriter.java ../GlobalOptions.java ../bytecode/InnerClassInfo.java ../type/ArrayType.java ../type/ClassInterfacesType.java ../type/NullType.java ../type/Type.java
+LocalInfo.class: LocalInfo.java Declarable.java ../AssertError.java ../expr/LocalVarOperator.java ../GlobalOptions.java ../type/Type.java Options.java ../expr/Expression.java TabbedPrintWriter.java
+LocalVarEntry.class: LocalVarEntry.java
+LocalVariableRangeList.class: LocalVariableRangeList.java LocalVarEntry.java ../GlobalOptions.java
+LocalVariableTable.class: LocalVariableTable.java LocalVariableRangeList.java ../bytecode/LocalVariableInfo.java ../bytecode/Instruction.java ../type/Type.java
+Main.class: Main.java Options.java ../GlobalOptions.java ../bytecode/ClassInfo.java TabbedPrintWriter.java ClassAnalyzer.java ImportHandler.java
+MethodAnalyzer.class: MethodAnalyzer.java Scope.java ClassDeclarer.java ImportHandler.java ../flow/Jump.java ../flow/FlowBlock.java ../flow/StructuredBlock.java ../bytecode/MethodInfo.java ../type/MethodType.java ClassAnalyzer.java LocalInfo.java LocalVariableTable.java LocalVarEntry.java ../bytecode/BytecodeInfo.java ../GlobalOptions.java DeadCodeAnalysis.java ../bytecode/Instruction.java ../bytecode/Handler.java Opcodes.java ProgressListener.java ../flow/TransformExceptionHandlers.java ../type/Type.java Options.java ../jvm/CodeVerifier.java ../AssertError.java ../jvm/VerifyException.java ../expr/ThisOperator.java ../expr/InvokeOperator.java OuterValues.java ../expr/OuterLocalOperator.java Declarable.java ../jvm/SyntheticAnalyzer.java ../flow/EmptyBlock.java TabbedPrintWriter.java ../bytecode/ClassInfo.java ../expr/Operator.java ../expr/Expression.java ../expr/CheckNullOperator.java ../expr/LocalLoadOperator.java ../expr/LocalVarOperator.java
+Opcodes.class: Opcodes.java ../bytecode/Opcodes.java ../flow/InstructionBlock.java ../flow/Jump.java ../flow/FlowBlock.java ../flow/SpecialBlock.java ../flow/EmptyBlock.java ../bytecode/Instruction.java ../flow/JsrBlock.java ../flow/ConditionalBlock.java ../flow/SwitchBlock.java ../expr/NopOperator.java ../type/Type.java ../flow/RetBlock.java ../expr/ConstOperator.java ../expr/LocalLoadOperator.java MethodAnalyzer.java ../expr/ArrayLoadOperator.java ../expr/StoreInstruction.java ../expr/LocalStoreOperator.java ../expr/ArrayStoreOperator.java ../expr/BinaryOperator.java ../expr/UnaryOperator.java ../expr/ShiftOperator.java ../expr/IIncOperator.java ../expr/ConvertOperator.java ../expr/CompareToIntOperator.java ../expr/CompareUnaryOperator.java ../expr/CompareBinaryOperator.java ../flow/ReturnBlock.java ../expr/GetFieldOperator.java ../expr/PutFieldOperator.java ../bytecode/Reference.java ../expr/InvokeOperator.java ../expr/NewOperator.java ../expr/ArrayLengthOperator.java ../flow/ThrowBlock.java ../expr/CheckCastOperator.java ../expr/InstanceOfOperator.java ../expr/MonitorEnterOperator.java ../expr/MonitorExitOperator.java ../expr/NewArrayOperator.java ../AssertError.java ../type/IntegerType.java
+Options.class: Options.java ../bytecode/ClassInfo.java ../bytecode/InnerClassInfo.java
+OuterValueListener.class: OuterValueListener.java
+OuterValues.class: OuterValues.java ../expr/Expression.java ../type/Type.java LocalInfo.java MethodAnalyzer.java ClassAnalyzer.java ../GlobalOptions.java ../type/MethodType.java ../expr/ThisOperator.java ../expr/OuterLocalOperator.java ../expr/LocalLoadOperator.java ../expr/LocalVarOperator.java OuterValueListener.java
+ProgressListener.class: ProgressListener.java
+Scope.class: Scope.java
+TabbedPrintWriter.class: TabbedPrintWriter.java Options.java Scope.java ../bytecode/ClassInfo.java ../bytecode/InnerClassInfo.java ImportHandler.java ../type/ArrayType.java ../type/ClassInterfacesType.java ../type/NullType.java ../type/Type.java
+Window.class: Window.java Decompiler.java

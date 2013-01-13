@@ -1,0 +1,15 @@
+# This dependency file is automatically created by ../../../javaDependencies.pl from class files.
+# Do not edit.
+
+ConstantAnalyzer.class: ConstantAnalyzer.java SimpleAnalyzer.java ../../bytecode/Opcodes.java ../CodeAnalyzer.java ../../bytecode/Instruction.java ../Main.java ../ClassBundle.java ../../bytecode/BytecodeInfo.java ../../bytecode/Handler.java ../../AssertError.java ../FieldIdentifier.java ../../bytecode/Reference.java ../../bytecode/TypeSignature.java ../ConstantRuntimeEnvironment.java ../Identifier.java ../../GlobalOptions.java ../../jvm/InterpreterException.java ../../bytecode/MethodInfo.java
+KeywordRenamer.class: KeywordRenamer.java ../Renamer.java ../OptionHandler.java StrongRenamer.java
+LocalOptimizer.class: LocalOptimizer.java ../../bytecode/Opcodes.java ../CodeTransformer.java ../../bytecode/Instruction.java ../../bytecode/LocalVariableInfo.java ../../bytecode/BytecodeInfo.java ../../bytecode/MethodInfo.java ../../bytecode/TypeSignature.java ../../AssertError.java ../../bytecode/Handler.java ../Main.java ../ClassBundle.java ../../GlobalOptions.java
+ModifierMatcher.class: ModifierMatcher.java ../IdentifierMatcher.java ../OptionHandler.java ../ClassIdentifier.java ../MethodIdentifier.java ../FieldIdentifier.java
+MultiIdentifierMatcher.class: MultiIdentifierMatcher.java ../IdentifierMatcher.java ../OptionHandler.java
+NameSwapper.class: NameSwapper.java ../Renamer.java ../PackageIdentifier.java ../ClassIdentifier.java ../MethodIdentifier.java ../FieldIdentifier.java ../LocalIdentifier.java ../Identifier.java
+RemovePopAnalyzer.class: RemovePopAnalyzer.java ../CodeTransformer.java ../../bytecode/Opcodes.java ../../bytecode/BytecodeInfo.java ../../bytecode/Instruction.java ../../bytecode/Handler.java ../../AssertError.java ../../bytecode/Reference.java ../../bytecode/TypeSignature.java
+SerializePreserver.class: SerializePreserver.java ../IdentifierMatcher.java ../OptionHandler.java ../PackageIdentifier.java ../ClassIdentifier.java ../FieldIdentifier.java ../Identifier.java ../MethodIdentifier.java
+SimpleAnalyzer.class: SimpleAnalyzer.java ../CodeAnalyzer.java ../../bytecode/Opcodes.java ../../bytecode/Reference.java ../../bytecode/ClassInfo.java ../../bytecode/Instruction.java ../Main.java ../ClassBundle.java ../Identifier.java ../ClassIdentifier.java ../../GlobalOptions.java ../../bytecode/BytecodeInfo.java ../MethodIdentifier.java ../FieldIdentifier.java ../../bytecode/Handler.java ../../bytecode/TypeSignature.java
+StrongRenamer.class: StrongRenamer.java ../Renamer.java ../OptionHandler.java ../PackageIdentifier.java ../ClassIdentifier.java ../FieldIdentifier.java ../MethodIdentifier.java ../LocalIdentifier.java
+UniqueRenamer.class: UniqueRenamer.java ../Renamer.java
+WildCard.class: WildCard.java ../IdentifierMatcher.java ../OptionHandler.java ../Identifier.java

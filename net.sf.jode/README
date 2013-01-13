@@ -1,0 +1,90 @@
+JODE (Java Optimize and Decompile Environment)
+
+JODE is a java package containing a decompiler and an optimizer for
+java.  This package is freely available under the GNU General Public
+License.
+
+The decompiler reads in class files and produces something similar to
+the original java file.  Of course this can't be perfect: There is no
+way to produce the comments or the names of local variables (except
+when the java files were compiled with `-g') and there are often more
+ways to write the same thing.  However, jode does its job quite well.
+
+The optimizer transforms class files in various ways with
+can be controlled by a script file.
+
+Please note that most software licenses forbid to decompile class
+files.  Use this decompiler only, if you have legal rights to
+decompile the class (e.g. on your own code).
+
+The features of the decompilers are:
+
+ * Systematic flow analysis, that can decompile every java code
+   without the need of goto (which doesn't exists in java).
+ * Type deduction, that can guess the type of local variables, even if 
+   it is an interface type that doesn't occur in the bytecode.
+ * Handling of inner and anonymous classes.
+ * Different indentation styles available.
+ * It can decompile itself (194 classes) without a single error.
+ * It can decrypt strings on the fly, that were encrypted by an obfuscator.
+
+Known bugs of the decompiler:
+
+ - Some jdk1.3 synthetic access functions aren't understood.  The
+   produced source contains access$xxx functions, but it still compiles.
+
+ - There may be other bugs, that cause Exceptions or invalid code.
+   If you have such a problems don't hesitate to issue a bug report.
+   Please include the <code>class</code> file if possible.
+
+Limitations:
+
+ - If not all dependent classes can be found, the verifier (which is 
+   run before decompilation starts) may exit with a type error.  You
+   can decompile it with --verify=off, but take the warning serious,
+   that the types may be incorrect.  There's sometimes no way to guess
+   the right type, if you don't have access the full class hierarchie.
+
+   But if you don't have the dependent classes, you can't compile the
+   code again, anyway, so why do you want to decompile it?
+
+ - There may be situations, where jode doesn't understand complex
+   expressions. In this case many ugly temporary variables are used,
+   but the code should still be compileable.  This does especially
+   happen when you compile with `-O' flag and javac has inlined some
+   methods.
+
+
+The features of the obfuscator are:
+ * Modular design, you can plug the obfuscation transformation you need
+   together via the script file.
+ * Strong analysis, that optimizes away fields, expressions that are
+   known to be constant (and reverts the flow obfuscation of Zelix
+   Klassmaster)
+ * Can also be used as Optimizer, without any obfuscation at all,  it
+   will preserve the local variable table and line number table.
+ * Many different renaming options, you can also simply add your own.
+
+
+PRELIMINARIES:
+
+See INSTALL for installation instructions.
+
+USAGE:
+
+First set the classpath.  It should contain the jar file jode-1.1.jar,
+the gnu getopt package and the sun collection package for 1.1.  For
+the swingui program you also need swing in you classpath.
+
+You can then decompile a class file with:
+  java jode.decompiler.Main --classpath program.jar,libfoo.jar org.package.Class
+or a complete package with
+  java jode.decompiler.Main --classpath libfoo.jar program.jar
+
+For a graphical user interface based on swing try:
+  java jode.swingui.Main --classpath jarfile1.jar
+
+The obfuscator/deobfuscator can be run with a script:
+  java jode.obfuscator.Main obfuscation.jos
+
+See the web documents for more information about the script syntax.

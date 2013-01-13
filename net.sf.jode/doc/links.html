@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN">
+<html>
+<head>
+<title>Java Optimize and Decompile Environment (JODE)</title>
+<meta name="date" content="2001-05-29">
+<meta name="description" content="JODE - Java Optimize and Decompile Environment.">
+<meta name="author" content="Jochen Hoenicke">
+<meta name="keywords" content="jode, java, decompiler, obfuscator, deobfuscator, reverse engineering, free, GPL">
+<style type="text/css">
+<!--
+body { color:#000000; background-color: #FFFFFF; }
+.nav { font-family: Helvetica, Arial, sans-serif; font-weight: bold;
+       color:#000000; background-color: #EEEEF8; }
+.footer { color:#FFFFFF; background-color: #737B9C; }
+.boldlink { font-weight:bold; text-decoration: none; color:#FFFFFF; }
+//-->
+</style>
+</head>
+
+<body text=#000000 bgcolor=#FFFFFF>
+
+<table cellpadding=4 cellspacing=1 width="100%"
+  ><tr
+    ><td align="left"
+      ><img src="jode-logo.gif" alt="JODE" width=286 height=110
+    ></td
+    ><td align="right"
+      >Powered by <a href="http://sourceforge.net"><img
+      src="http://sourceforge.net/sflogo.php?group_id=3790&type=1"
+      border=0 width=88 height=31 alt="SourceForge"></a><br
+      >Best viewed with <a
+      href="http://www.anybrowser.org/campaign/"><img
+      src="a-logo.gif" border=0 width=88 height=31 alt="Any
+      Browser"></a><br
+    ></td
+  ></tr
+></table>
+
+
+<table cellspacing=0 cellpadding=3 border=0 bgcolor=#EEEEF8 class="nav">
+<tr><td class="nav">
+<a href="./"><B>Home</B></a> |
+<a href="http://sourceforge.net/project/?group_id=3790">Project&nbsp;page</a> |
+<a href="./applet.htp">Applet</a> |
+<a href="./download.htp">Download</a> |
+<a href="./faq.htp">FAQ</a> |
+<a href="./feedback.htp">Feedback</a> |
+<a href="./usage.htp">Documentation</a> |
+<a href="./license.htp">License</a> |
+<a href="./history.htp">History</a> |
+<a href="./links.htp">Links</a> |
+<a href="./bluesky.htp">Blue&nbsp;Sky</a></td></tr>
+</table><br>
+
+<h1><i>JODE</i> Links</h1>
+<h3>Other decompilers</h3>
+<ul>
+<li><a href="http://dmoz.org/Computers/Programming/Languages/Java/Decompilers_and_Disassemblers/">The Open Directory list</a></li>
+<li>A list of decompilers can be found at <a href="http://www.meurrens.org/ip-Links/Java/CodeEngineering/#tocDecompilersToJava">Marc Meurren's list</a>
+</li>
+<li>A very fast decompiler is <a
+href="http://www.geocities.com/SiliconValley/Bridge/8617/jad.html">jad</a>
+written in C++.  It doesn't come with source code though, and misses
+some features <i>JODE</i> has ;-)</li> <li><a
+href="http://www.javaworld.com/javaworld/jw-07-1997/jw-07-decompilers.html">A
+comparison of three decompilers</a> (but not <i>JODE</i>) was done by Dave
+Dyer.
+</ul>
+<h3>Other obfuscators</h3>
+<ul>
+<li><a href="http://dmoz.org/Computers/Programming/Languages/Java/Obfuscators/">The Open Directory list</a></li>
+<li><a href="http://www.sbktech.org/hashjava_old.html">Hashjava</a> is another free obfuscator.  It is no longer maintained, though, since its successor was commercialized.</li>
+<li><a href="http://www.zelix.com/klassmaster/index.html">Zelix
+Klassmaster</a> does a very good flow optimization and also decrypts
+strings.  But <i>JODE</i>'s deobfuscator can undo both.</li>
+<li><a href="http://www.cs.arizona.edu/~collberg/Research/">Christian S. Collberg</a> has some really interesting papers about non reversible obfuscations.</li>
+</ul>
+<h3>Graphical User Interface</h3>
+<ul>
+<li><i>JODE</i> is used by the <a
+href="http://jedit.standmed.com/plugins/JavaInsight">JavaInsight plugin</a> for
+<a href="http://jedit.sourceforge.net/">jEdit</a>.</li>
+</ul>
+<h3>Software Directories</h3>
+<ul>
+<li>Get everything and anything for Linux at the
+     <a href="http://www.linux-directory.com" target="_top"
+     ><IMG SRC="http://www.linux-directory.com/button_88x31.gif" 
+     WIDTH=88 HEIGHT=31 BORDER=0 ALT="Linux Directory"></a>.
+</li>
+<li>A great place for developing free software is
+     <a href="http://sourceforge.net"><img
+      src="http://sourceforge.net/sflogo.php?group_id=3790&type=1"
+      border=0 width=88 height=31 alt="SourceForge"></a>
+</li>
+</ul>
+<h3>Miscellanous packages needed to run JODE</h3>
+<dl>
+<dt>CYGWIN (unix tools for win95/NT)</dt>
+<dd>
+   <a href="http://sourceware.cygnus.com/cygwin/">http://sourceware.cygnus.com/cygwin/</a>
+</dd>
+<dt>JDK 1.1:</dt>
+<dd>
+   <a href="http://java.sun.com/products/jdk/1.1/">http://java.sun.com/products/jdk/1.1/</a>
+</dd>
+<dt><a name="swing">Swing for JDK 1.1:</a><dt>
+<dd>
+   <a href="http://java.sun.com/products/jfc/index.html#download-swing">http://java.sun.com/products/jfc/index.html#download-swing</a>
+</dd>
+<dt>JDK 1.2:</dt>
+<dd>
+   <a href="http://java.sun.com/products/jdk/1.2/">http://java.sun.com/products/jdk/1.2/</a>
+</dd>
+<dt><a name="getopt">Getopt</a>:</dt>
+<dd>
+   <a href="http://www.urbanophile.com/arenn/hacking/download.html#getopt">http://www.urbanophile.com/arenn/hacking/download.html#getopt</a>
+</dd>
+<dt><a name="collections">Collection Classes</a>:</dt>
+<dd>I have written a small script that puts the collection classes
+from the <a href="http://www.classpath.org">GNU Classpath Project</a>
+into its own package (<code>gnu.java.util.collections</code>).  This
+script is now part of GNU classpath.  For your convenience I have put a
+precompiled <a
+href="http://www.informatik.uni-oldenburg.de/~delwi/jode/collections.jar">jar
+file</a> on this server.
+</dd>
+</dl>
+<TABLE class=footer width="100%" border="0" cellspacing="0" cellpadding="2">
+  <TR>
+    <TD align="center"><SPAN class=footer>
+      All trademarks and copyrights on this page are properties of their respective owners. <br>
+      Last updated on 29-May-2001, 
+      Copyright &copy; 1998-2001 by Jochen Hoenicke.
+      Canonic URL is <a class=boldlink href="http://jode.sourceforge.net/">http://jode.sourceforge.net/</a></SPAN>
+    </TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN">
+<html>
+<head>
+<title>Java Optimize and Decompile Environment (JODE)</title>
+<meta name="date" content="2001-05-29">
+<meta name="description" content="JODE - Java Optimize and Decompile Environment.">
+<meta name="author" content="Jochen Hoenicke">
+<meta name="keywords" content="jode, java, decompiler, obfuscator, deobfuscator, reverse engineering, free, GPL">
+<style type="text/css">
+<!--
+body { color:#000000; background-color: #FFFFFF; }
+.nav { font-family: Helvetica, Arial, sans-serif; font-weight: bold;
+       color:#000000; background-color: #EEEEF8; }
+.footer { color:#FFFFFF; background-color: #737B9C; }
+.boldlink { font-weight:bold; text-decoration: none; color:#FFFFFF; }
+//-->
+</style>
+</head>
+
+<body text=#000000 bgcolor=#FFFFFF>
+
+<table cellpadding=4 cellspacing=1 width="100%"
+  ><tr
+    ><td align="left"
+      ><img src="jode-logo.gif" alt="JODE" width=286 height=110
+    ></td
+    ><td align="right"
+      >Powered by <a href="http://sourceforge.net"><img
+      src="http://sourceforge.net/sflogo.php?group_id=3790&type=1"
+      border=0 width=88 height=31 alt="SourceForge"></a><br
+      >Best viewed with <a
+      href="http://www.anybrowser.org/campaign/"><img
+      src="a-logo.gif" border=0 width=88 height=31 alt="Any
+      Browser"></a><br
+    ></td
+  ></tr
+></table>
+
+
+<table cellspacing=0 cellpadding=3 border=0 bgcolor=#EEEEF8 class="nav">
+<tr><td class="nav">
+<a href="./"><B>Home</B></a> |
+<a href="http://sourceforge.net/project/?group_id=3790">Project&nbsp;page</a> |
+<a href="./applet.htp">Applet</a> |
+<a href="./download.htp">Download</a> |
+<a href="./faq.htp">FAQ</a> |
+<a href="./feedback.htp">Feedback</a> |
+<a href="./usage.htp">Documentation</a> |
+<a href="./license.htp">License</a> |
+<a href="./history.htp">History</a> |
+<a href="./links.htp">Links</a> |
+<a href="./bluesky.htp">Blue&nbsp;Sky</a></td></tr>
+</table><br>
+
+<h1>Blue Sky</h1>
+
+<p>This section contains features that I think would be great to have,
+but are also very hard to implement.  The name of the section is
+inspired, by <a
+href="http://www.mozilla.org/blue-sky/">Mozilla</a>.</p>
+
+<p>Currently this are all my own ideas.  But if you send me an idea
+for an interesting feature, I will add it to this list.</p>
+
+<h2><i>Out</i>line inlined methods</h2>
+
+<p>If java gets called with `<code>-O</code>' switch, it inlines methods,
+that are private, final, or static and contain no loops.  When
+decompiling this it sometimes produces really ugly code.  The right
+way to solve this would be to <i>out</i>line the code again.  This is
+possible but requires to find the inlined method.  </p>
+
+<p>The name `outline' was suggested by <a
+href="http://www.informatik.uni-oldenburg.de/~mw">Michael</a>.
+</p>
+
+<h2>Better names of local variables</h2>
+
+<p>The local variable naming is very stupid.  Even with pretty it just
+names the variable after the type with a unifying number appended. A
+method containing very much objects of the same type looks very
+ugly. </p>
+
+<p>My plan is looking at the assignments.  If we have locals in
+assignments
+<pre>
+int l_1 = array.length
+String l_2 = object.getName()
+</pre>
+we could name them "length" and "name".  If we
+have assignments:
+<pre>
+MenuItem local_1 = new MenuItem("Open");
+MenuItem local_2 = new MenuItem("Save");
+</pre>
+good names would be <code>miOpen</code> and <code>miSave</code>.  </p>
+
+<p>It is currently possible to assign a <i>(hint name,type)</i> pair
+to a local.  If the type matches, the local will be named after
+<i>hint name</i>.  This could be extended by giving them several
+weighted hints and constructing the name in an intelligent way. </p>
+
+<h2>Better deobfuscation features</h2>
+<p>First there should be a good Renamer: Methods that simply
+return a field value should be renamed to get<i>FieldName</i>.
+Fields should be named after their type, maybe also by assignments
+(see section about local variable names).</p>
+
+<p>The deobfuscator should detect inner and anonymous variables,
+synthetic methods and so on, and rename them accordingly.</p>
+
+<h2>Handling of Class.forName in obfuscator</h2>
+<p>The obfuscator should detect Class.forName constructs (and
+similarly for methods and fields) and if their parameters are constant
+it should change the parameter according to the rename function. </p>
+
+<h2>Merging javadoc comments</h2>
+<p>It would be nice if the decompiler could merge the javadoc comments
+into the class file.  More and more people use javadoc to comment the
+public api of their java classes.  It shouldn't be too difficult to
+copy them back into the java code. </p>
+
+<p>This doesn't need to be built into the decompiler.  A script that takes
+the javadoc pages and the decompiled code can easily merge them.</p>
+<TABLE class=footer width="100%" border="0" cellspacing="0" cellpadding="2">
+  <TR>
+    <TD align="center"><SPAN class=footer>
+      All trademarks and copyrights on this page are properties of their respective owners. <br>
+      Last updated on 29-May-2001, 
+      Copyright &copy; 1998-2001 by Jochen Hoenicke.
+      Canonic URL is <a class=boldlink href="http://jode.sourceforge.net/">http://jode.sourceforge.net/</a></SPAN>
+    </TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>

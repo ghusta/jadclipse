@@ -1,0 +1,20 @@
+# This dependency file is automatically created by ../../javaDependencies.pl from class files.
+# Do not edit.
+
+BinaryInfo.class: BinaryInfo.java ../util/SimpleMap.java ConstantPool.java GrowableConstantPool.java
+BytecodeInfo.class: BytecodeInfo.java BinaryInfo.java Opcodes.java ../GlobalOptions.java LocalVariableInfo.java Instruction.java ConstantPool.java LineNumber.java ClassFormatException.java Reference.java TypeSignature.java Handler.java GrowableConstantPool.java MethodInfo.java
+ClassFormatException.class: ClassFormatException.java
+ClassInfo.class: ClassInfo.java BinaryInfo.java SearchPath.java ../util/UnifyHash.java ClassFormatException.java ConstantPool.java InnerClassInfo.java FieldInfo.java MethodInfo.java GrowableConstantPool.java ../GlobalOptions.java TypeSignature.java
+ConstantPool.class: ConstantPool.java ClassFormatException.java TypeSignature.java Reference.java
+FieldInfo.class: FieldInfo.java BinaryInfo.java ClassFormatException.java ConstantPool.java GrowableConstantPool.java ClassInfo.java
+GrowableConstantPool.class: GrowableConstantPool.java ConstantPool.java TypeSignature.java Reference.java ClassFormatException.java
+Handler.class: Handler.java
+InnerClassInfo.class: InnerClassInfo.java
+Instruction.class: Instruction.java Opcodes.java Reference.java ../AssertError.java BytecodeInfo.java Handler.java LocalVariableInfo.java LineNumber.java TypeSignature.java
+LineNumber.class: LineNumber.java
+LocalVariableInfo.class: LocalVariableInfo.java
+MethodInfo.class: MethodInfo.java BinaryInfo.java BytecodeInfo.java ConstantPool.java ClassFormatException.java GrowableConstantPool.java ClassInfo.java
+Opcodes.class: Opcodes.java
+Reference.class: Reference.java ../util/UnifyHash.java
+SearchPath.class: SearchPath.java ../GlobalOptions.java
+TypeSignature.class: TypeSignature.java ../AssertError.java ClassInfo.java

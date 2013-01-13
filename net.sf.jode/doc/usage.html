@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN">
+<html>
+<head>
+<title>Java Optimize and Decompile Environment (JODE)</title>
+<meta name="date" content="2001-05-29">
+<meta name="description" content="JODE - Java Optimize and Decompile Environment.">
+<meta name="author" content="Jochen Hoenicke">
+<meta name="keywords" content="jode, java, decompiler, obfuscator, deobfuscator, reverse engineering, free, GPL">
+<style type="text/css">
+<!--
+body { color:#000000; background-color: #FFFFFF; }
+.nav { font-family: Helvetica, Arial, sans-serif; font-weight: bold;
+       color:#000000; background-color: #EEEEF8; }
+.footer { color:#FFFFFF; background-color: #737B9C; }
+.boldlink { font-weight:bold; text-decoration: none; color:#FFFFFF; }
+//-->
+</style>
+</head>
+
+<body text=#000000 bgcolor=#FFFFFF>
+
+<table cellpadding=4 cellspacing=1 width="100%"
+  ><tr
+    ><td align="left"
+      ><img src="jode-logo.gif" alt="JODE" width=286 height=110
+    ></td
+    ><td align="right"
+      >Powered by <a href="http://sourceforge.net"><img
+      src="http://sourceforge.net/sflogo.php?group_id=3790&type=1"
+      border=0 width=88 height=31 alt="SourceForge"></a><br
+      >Best viewed with <a
+      href="http://www.anybrowser.org/campaign/"><img
+      src="a-logo.gif" border=0 width=88 height=31 alt="Any
+      Browser"></a><br
+    ></td
+  ></tr
+></table>
+
+
+<table cellspacing=0 cellpadding=3 border=0 bgcolor=#EEEEF8 class="nav">
+<tr><td class="nav">
+<a href="./"><B>Home</B></a> |
+<a href="http://sourceforge.net/project/?group_id=3790">Project&nbsp;page</a> |
+<a href="./applet.htp">Applet</a> |
+<a href="./download.htp">Download</a> |
+<a href="./faq.htp">FAQ</a> |
+<a href="./feedback.htp">Feedback</a> |
+<a href="./usage.htp">Documentation</a> |
+<a href="./license.htp">License</a> |
+<a href="./history.htp">History</a> |
+<a href="./links.htp">Links</a> |
+<a href="./bluesky.htp">Blue&nbsp;Sky</a></td></tr>
+</table><br>
+
+<a name="decompiler">
+<h1>Using the Decompiler</h1></a>
+<p>After you have <a href="./download.htp">downloaded</a> the jar archive
+put it into your <tt>CLASSPATH</tt>. The package
+<tt>swingall.jar</tt> is also needed if you are using JDK 1.1.</p>
+
+<ul><li>Under Windows you have to start a MSDOS session and type
+something like:
+<pre>
+set CLASSPATH=C:\download\jode-1.1.jar;C:\swing\swingall.jar
+</pre>
+
+<li>Under Unix you start a shell and type (for bourne shell):
+<pre>export CLASSPATH=/tmp/jode-1.1.jar:/usr/local/swing/swingall.jar</pre>
+or for csh:
+<pre>setenv CLASSPATH /tmp/jode-1.1.jar:/usr/local/swing/swingall.jar</pre>
+</ul>
+<br>
+There is also a batch file for windows and a script file for unix,
+that you can use.  You can extract it with the following command:
+<pre>
+  jar -xvf jode-1.1-jdk1.1.jar bin/jode.bat <i>resp.</i> bin/jode
+</pre>
+Edit the file to adapt it to your paths and put it to a convenient location.
+
+<a name="cmdline"><h3>Command Line Interface</h3></a>
+
+The most powerful way to start <I>JODE</I>'s decompiler is the command
+line interface.  Some people don't like long command lines; they
+should go to the next section. <br>
+
+Start the class <tt>jode.decompiler.Main</tt> with the options.  The
+following command will give a complete list of the available commands:
+
+<pre>java jode.decompiler.Main --help</pre>
+
+If you want to decompile a jar package you can do it this way:
+
+<pre>java jode.decompiler.Main --dest srcdir program.jar</pre>
+
+If you have installed the batch file/script, you can use it like this:
+<pre>jode --dest srcdir program.jar</pre>
+
+<a name="awt"><h3>AWT Interface</h3></a>
+
+The AWT Interface looks exactly like the <a href="./applet.htp">applet</a>.  In fact the applet uses the AWT Interface. You start it
+after setting the <tt>CLASSPATH</tt> (see <a href="./usage.htp#decompiler">above</a>), with 
+
+<pre>java jode.decompiler.Window</pre>
+
+In the classpath line you can enter a number of jar files, zip files
+and directories separated by comma(<tt>,</tt>). Then enter the
+dot(<tt>.</tt>) separated name of the class you want to decompile.
+Press the <code>start</code> button and the decompiled class should
+appear.  You can save it via the <code>save</code> button.
+
+<a name="swing"><h3>Swing Interface</h3></a>
+
+For the swing interface you need java version 1.2 or the separately
+available swing package (see <a href="./links.htp#swing">link
+page</a>.  You can invoke it with the following command:
+<pre>
+java jode.swingui.Main classes.jar
+<i>resp.</i> jode swi classes.jar
+</pre>
+
+<p>The swing interface will show the package hierarchie of all classes
+in the classpath on the left side.  You can now select a class and the
+decompiled code will appear on the right side.  Via the menu, you may
+change the classpath or switch between package hierarchie tree and
+class inheritence tree.</p>
+
+<p>The swing interface is very useful to browse through class files if
+you don't have the source code.  You can also use it to trace bugs in
+library code.  It is not meant to generate <tt>java</tt> files and so
+you won't find a save option there.</p>
+
+<a name="java"><h3>Java Interface</h3></a>
+
+<p>If you want to integrate <i>JODE</i> into your own java program,
+you can use the <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/jode/jode/jode/decompiler/Decompiler.java?rev=jode_1_1&content-type=text/vnd.viewcvs-markup"
+><code>jode.decompiler.Decompiler</code></a>
+class.  Note that the GPL only allows you to integrate <i>JODE</i>
+into GPL programs.  Please tell me if you use <i>JODE</i> in this
+way.</p>
+
+<p>You should ship <code>jode-1.1-embedded.jar</code> with your program.  This jar file is
+available in the <a href="http://sourceforge.net/project/showfiles.php?group_id=3790">download area</a>.
+It works only under JDK&nbsp;1.2 and above.</p>
+
+<a name="optimizer"><h1>Using the Obfuscator</h1>
+
+<p>To use the obfuscator you should first create a script file, say <a
+href="myproject.jos"><tt>myproject.jos</tt></a>.  Then you can invoke the
+obfuscator with:
+<pre>
+java jode.obfuscator.Main myproject.jos
+</pre></p>
+
+<p>The script file should contain the following options: </p>
+
+<p>First select the classpath.  You should include everything in the
+classpath that you need to run your application.  This also includes
+the system class files (Sun puts them into <code>classes.zip</code> or
+<code>rt.jar</code>))</p>
+<pre>
+classpath = "c:\\jdk1.2\\jre\\lib\\rt.jar","d:\\project\\java",
+     "ftp://www.myorg.org/pub/classlib.jar"
+</pre>
+
+<p>Specify where you want the obfuscated classes to go.  I recommend
+to write them directly into a zip file, but you can also give a
+directory.</p>
+<pre>
+dest = "obfuscated.zip"
+</pre>
+
+<p>You can make <i>JODE</i> write its translation table.  This table
+can be used later to undo the name obfuscation, or you can look there
+to decrypt exceptions you may get.</p>
+<pre>
+revtable = "translat.tbl"
+</pre>
+
+<p>Select what you want to strip.  There are several
+possibilities, which can be separated by comma(<tt>,</tt>):</p>
+<dl>
+<dt>unreach</dt>
+<dd>strip unreachable methods and classes.</dd>
+<dt>source</dt>
+<dd>remove the name of the java file (exceptions will get unreadable).</dd>
+<dt>lnt</dt>
+<dd>remove the line number table (exceptions will get unreadable).</dd>
+<dt>lvt</dt>
+<dd>remove the local variable table (debugging doesn't work).</dd>
+<dt>inner</dt>
+<dd>strip inner class info (reflection doesn't work correctly).</dd>
+</dl>
+<pre>
+strip = "unreach","lvt","inner"
+</pre>
+
+<p>Select the packages and classes you want to obfuscate.  You should
+only include libraries, that you don't ship separately.  If you give a
+package, all classes and subpackages are loaded.  You can also use
+<code>*</code> as wild card, that matches everything (including dots).
+</p>
+<pre>
+load = new WildCard { value = "org.myorg.myproject" },
+       new WildCard { value = "org.myorg.mylib*" },
+       new WildCard { value = "org.otherorg.shortlib" }
+</pre>
+
+<p>Select the methods and classes you want to preserve.  This is
+the <tt>main</tt> method for applications and the default constructor
+<tt>&lt;init&gt;.()V</tt> for applets, resource bundles and other classes
+that you load manually at runtime.<br> You have to give the method
+name and the type signature to identify your method.  <tt>javap
+-s</tt> will show you the type signatures for your classes, but you
+may also use <tt>*</tt>, to select all methods with that name.</p>
+<pre>
+preserve = new WildCard { value = "org.myorg.ApplicationClass.main.*" },
+           new WildCard { value = "org.myorg.AppletClass.&lt;init&gt;.()V" },
+           new WildCard { value = "org.resources.Bundle*.&lt;init&gt;.()V" },
+</pre>
+
+<p>If you want to obfuscate (or just shorten) the identifier you can
+specify a renamer.  There are currently following renamer
+available</p>
+<dl><dt>StrongRenamer</dt>
+<dd>Renames to the shortest possible name.  You can give a charset
+that should be used.  It uses the same name as much as possible.</dd>
+<dt>UniqueRenamer</dt>
+<dd>Renames to unique identifier of the form <tt>xxx123</tt>.  Useful
+to reduce name conflicts, before you decompile an obfuscated package.</dd>
+<dt>NameSwapper</dt>
+<dd>This renamer just swaps the names.  This is a funny obfuscation
+option that is not very strong, but very confusing.</dd>
+<dt>KeywordRenamer</dt>
+<dd>Renames identifiers to keyword.  You can give your own list of
+keywords as parameters.  Resulting code is not decompilable directly,
+<b>but it is <i>not</i> legal bytecode either</b>.  Some paranoid
+web browsers refuse to run applets containing keywords as identifiers
+(and they are completely within the Java VM spec).</dd>
+</dl>
+<pre>
+renamer = new StrongRenamer
+</pre>
+
+<p>You can also create a renaming table with the same format as the
+table written by revtable.  The entries in the table get precedence
+over renamer.  Entries not in the table will get renamed by the
+renamer.<p>
+<pre>
+table = "translat.tbl"
+</pre>
+
+<p>Now you can select the analyzer.  The purpose of the
+analyzer is to mark all reachable methods, find out which methods
+needs to get the same name (overloading), and which method names
+mustn't change (overload of library methods, e.g. <tt>nextElement</tt>
+for <tt>Enumeration</tt>s). There are currently two analyzers.
+<dl><dt>SimpleAnalyzer</dt>
+<dd>Straight forward analyzer.  It is fast and will remove dead code
+on method basis.</dd>
+
+<dd><dt>ConstantAnalyzer</dt>
+<dd>Strong analyzer that will determine, which fields and instructions
+have constant values.  It will remove dead code on instruction basis
+and replace constant instruction with a load of the constant, or
+remove them completely.<br> This analyzer is especially useful to
+revert the flow obfuscation of some other obfuscators.</dd>
+</dl>
+</p>
+<pre>
+analyzer = new ConstantAnalyzer
+</pre>
+
+<p>Pre- and Post transformers transform the bytecode before
+resp. after the Analyzer runs.  Using this default should be okay.
+You may remove the LocalOptimizer, though, if you have problems.</p>
+<p>In the future I may add some new post transformers, that do string
+encryption, flow obfuscation and similar things.  If you want to write
+your own Transformers please contact me, since the next version will
+change the bytecode interface.</p>
+<pre>
+post = new LocalOptimizer, new RemovePopAnalyzer
+</pre>
+<TABLE class=footer width="100%" border="0" cellspacing="0" cellpadding="2">
+  <TR>
+    <TD align="center"><SPAN class=footer>
+      All trademarks and copyrights on this page are properties of their respective owners. <br>
+      Last updated on 29-May-2001, 
+      Copyright &copy; 1998-2001 by Jochen Hoenicke.
+      Canonic URL is <a class=boldlink href="http://jode.sourceforge.net/">http://jode.sourceforge.net/</a></SPAN>
+    </TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>

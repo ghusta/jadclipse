@@ -1,0 +1,11 @@
+# This dependency file is automatically created by ../../javaDependencies.pl from class files.
+# Do not edit.
+
+ArrayType.class: ArrayType.java ReferenceType.java IntegerType.java Type.java ClassInterfacesType.java RangeType.java ../bytecode/ClassInfo.java
+ClassInterfacesType.class: ClassInterfacesType.java ReferenceType.java ../bytecode/ClassInfo.java Type.java ../AssertError.java RangeType.java ArrayType.java
+IntegerType.class: IntegerType.java Type.java ../AssertError.java ../GlobalOptions.java
+MethodType.class: MethodType.java Type.java
+NullType.class: NullType.java ReferenceType.java Type.java RangeType.java
+RangeType.class: RangeType.java Type.java ReferenceType.java ../AssertError.java ../GlobalOptions.java
+ReferenceType.class: ReferenceType.java Type.java ../bytecode/ClassInfo.java ../GlobalOptions.java
+Type.class: Type.java ../AssertError.java ../bytecode/ClassInfo.java ../util/UnifyHash.java ClassInterfacesType.java ArrayType.java MethodType.java RangeType.java ../GlobalOptions.java IntegerType.java NullType.java

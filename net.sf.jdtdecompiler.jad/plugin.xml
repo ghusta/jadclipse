@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="net.sf.jdtdecompiler.core.decompilers">
+      <decompiler
+            class="net.sf.jdtdecompiler.jad.JadDecompiler"
+            id="net.sf.jdtdecompiler.jad.JadDecompiler"
+            name="Jad">
+      </decompiler>
+   </extension>
+
+   
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Jad"
+            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage/JdtDecompiler"
+            class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencePage"
+            id="Jad">
+      </page>
+      <page
+            name="Formatting"
+            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage/JdtDecompiler/Jad"
+            class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencePageFormat"
+            id="net.sf.jdtdecompiler.jad.preferences.Formatting">
+      </page>
+      <page
+            name="Directives"
+            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage/JdtDecompiler/Jad"
+            class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencePageDirect"
+            id="net.sf.jdtdecompiler.jad.preferences.Formatting">
+      </page>
+      <page
+            name="Debug"
+            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage/JdtDecompiler/Jad"
+            class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencePageDebug"
+            id="net.sf.jdtdecompiler.jad.preferences.Formatting">
+      </page>
+      <page
+            name="Misc"
+            category="org.eclipse.jdt.ui.preferences.JavaBasePreferencePage/JdtDecompiler/Jad"
+            class="net.sf.jdtdecompiler.jad.ui.preferences.JadPreferencePageMisc"
+            id="net.sf.jdtdecompiler.jad.preferences.Formatting">
+      </page>
+   </extension>
+</plugin>

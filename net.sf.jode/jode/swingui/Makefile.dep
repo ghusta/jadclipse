@@ -1,0 +1,7 @@
+# This dependency file is automatically created by ../../javaDependencies.pl from class files.
+# Do not edit.
+
+Main.class: Main.java PackagesTreeModel.java ../decompiler/Decompiler.java HierarchyTreeModel.java ../bytecode/ClassInfo.java
+Main.class: ../decompiler/ProgressListener.java
+HierarchyTreeModel.class: HierarchyTreeModel.java ../bytecode/ClassInfo.java Main.java
+PackagesTreeModel.class: PackagesTreeModel.java Main.java ../bytecode/ClassInfo.java ../decompiler/Options.java

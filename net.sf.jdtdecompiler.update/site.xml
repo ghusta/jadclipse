@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="http://jadclipse.sourceforge.net/update/site.xml">
+      Main JadClipse update site
+   </description>
+   <feature url="features/net.sf.jdtdecompiler.feature_3.4.0.v20090220.jar" id="net.sf.jdtdecompiler.feature" version="3.4.0.v20090220">
+      <category name="JDT Decompiler"/>
+   </feature>
+   <category-def name="JDT Decompiler" label="JDT Decompiler Features"/>
+</site>

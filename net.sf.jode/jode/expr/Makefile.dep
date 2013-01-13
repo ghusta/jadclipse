@@ -1,0 +1,47 @@
+# This dependency file is automatically created by ../../javaDependencies.pl from class files.
+# Do not edit.
+
+ArrayLengthOperator.class: ArrayLengthOperator.java Operator.java ../type/Type.java Expression.java ../decompiler/TabbedPrintWriter.java
+ArrayLoadOperator.class: ArrayLoadOperator.java Operator.java Expression.java ../type/Type.java ../type/ArrayType.java ../decompiler/TabbedPrintWriter.java
+ArrayStoreOperator.class: ArrayStoreOperator.java ArrayLoadOperator.java LValueExpression.java Operator.java Expression.java ../type/Type.java ../type/ArrayType.java ../decompiler/TabbedPrintWriter.java
+BinaryOperator.class: BinaryOperator.java Operator.java Expression.java ../type/Type.java ../decompiler/TabbedPrintWriter.java
+CheckCastOperator.class: CheckCastOperator.java Operator.java ../type/Type.java Expression.java ../decompiler/TabbedPrintWriter.java
+CheckNullOperator.class: CheckNullOperator.java Operator.java Expression.java ../decompiler/LocalInfo.java ../type/Type.java ../decompiler/TabbedPrintWriter.java
+ClassFieldOperator.class: ClassFieldOperator.java NoArgOperator.java ../decompiler/TabbedPrintWriter.java ../type/Type.java
+CombineableOperator.class: CombineableOperator.java
+CompareBinaryOperator.class: CompareBinaryOperator.java Operator.java ../type/Type.java Expression.java ../decompiler/TabbedPrintWriter.java
+CompareToIntOperator.class: CompareToIntOperator.java Operator.java ../type/Type.java Expression.java ../decompiler/TabbedPrintWriter.java
+CompareUnaryOperator.class: CompareUnaryOperator.java Operator.java ../type/Type.java Expression.java CompareToIntOperator.java CompareBinaryOperator.java ../decompiler/TabbedPrintWriter.java
+ConstOperator.class: ConstOperator.java NoArgOperator.java ../type/IntegerType.java ../type/Type.java Expression.java ../AssertError.java Operator.java StoreInstruction.java ../decompiler/TabbedPrintWriter.java
+ConstantArrayOperator.class: ConstantArrayOperator.java Operator.java Expression.java ../type/ArrayType.java ../type/Type.java ../decompiler/TabbedPrintWriter.java ConstOperator.java
+ConvertOperator.class: ConvertOperator.java Operator.java Expression.java ../type/Type.java ../decompiler/TabbedPrintWriter.java
+Expression.class: Expression.java ../type/Type.java ../GlobalOptions.java UnaryOperator.java Operator.java ../decompiler/TabbedPrintWriter.java ConstOperator.java
+FieldOperator.class: FieldOperator.java Operator.java ../type/Type.java Expression.java ../type/ClassInterfacesType.java ../decompiler/MethodAnalyzer.java ../decompiler/ClassAnalyzer.java ../bytecode/Reference.java ../AssertError.java ../bytecode/ClassInfo.java ../bytecode/TypeSignature.java ../type/NullType.java ../bytecode/FieldInfo.java ../decompiler/Options.java ../bytecode/InnerClassInfo.java ThisOperator.java ../decompiler/TabbedPrintWriter.java
+GetFieldOperator.class: GetFieldOperator.java FieldOperator.java Operator.java Expression.java ThisOperator.java ../decompiler/FieldAnalyzer.java OuterLocalOperator.java
+IIncOperator.class: IIncOperator.java Operator.java CombineableOperator.java LValueExpression.java Expression.java ../type/Type.java ../AssertError.java MatchableOperator.java PrePostFixOperator.java ../decompiler/TabbedPrintWriter.java
+IfThenElseOperator.class: IfThenElseOperator.java Operator.java ../type/Type.java Expression.java ConstOperator.java CompareUnaryOperator.java GetFieldOperator.java StoreInstruction.java PutFieldOperator.java FieldOperator.java ../decompiler/FieldAnalyzer.java InvokeOperator.java ClassFieldOperator.java ../decompiler/TabbedPrintWriter.java
+InstanceOfOperator.class: InstanceOfOperator.java Operator.java ../type/Type.java Expression.java ../decompiler/TabbedPrintWriter.java
+InvokeOperator.class: InvokeOperator.java Operator.java MatchableOperator.java ../bytecode/ClassInfo.java ../bytecode/Reference.java ../bytecode/TypeSignature.java ../decompiler/Options.java ../bytecode/InnerClassInfo.java ../decompiler/MethodAnalyzer.java ../type/Type.java Expression.java ../type/MethodType.java ../AssertError.java ../type/ClassInterfacesType.java ../decompiler/ClassAnalyzer.java GetFieldOperator.java ../jvm/SyntheticAnalyzer.java ../jvm/Interpreter.java ConstOperator.java ../GlobalOptions.java ../jvm/InterpreterException.java NewOperator.java StringAddOperator.java ConvertOperator.java StoreInstruction.java PutFieldOperator.java ../type/NullType.java ../bytecode/MethodInfo.java ../decompiler/OuterValues.java CheckNullOperator.java ../decompiler/TabbedPrintWriter.java ThisOperator.java ../type/IntegerType.java ../util/SimpleMap.java
+InvokeOperator.class: ../jvm/SimpleRuntimeEnvironment.java
+LValueExpression.class: LValueExpression.java MatchableOperator.java
+LocalLoadOperator.class: LocalLoadOperator.java LocalVarOperator.java ../decompiler/LocalInfo.java Expression.java Operator.java
+LocalStoreOperator.class: LocalStoreOperator.java LocalVarOperator.java LValueExpression.java Expression.java Operator.java LocalLoadOperator.java ../decompiler/LocalInfo.java
+LocalVarOperator.class: LocalVarOperator.java Operator.java Expression.java ../GlobalOptions.java ../decompiler/LocalInfo.java ../decompiler/TabbedPrintWriter.java
+MatchableOperator.class: MatchableOperator.java
+MonitorEnterOperator.class: MonitorEnterOperator.java Operator.java ../type/Type.java Expression.java ../decompiler/TabbedPrintWriter.java
+MonitorExitOperator.class: MonitorExitOperator.java Operator.java ../type/Type.java Expression.java ../decompiler/TabbedPrintWriter.java
+NewArrayOperator.class: NewArrayOperator.java Operator.java ../type/Type.java Expression.java ../type/ArrayType.java ../decompiler/TabbedPrintWriter.java
+NewOperator.class: NewOperator.java NoArgOperator.java ../decompiler/TabbedPrintWriter.java Expression.java
+NoArgOperator.class: NoArgOperator.java Operator.java
+NopOperator.class: NopOperator.java Expression.java ../decompiler/TabbedPrintWriter.java
+Operator.class: Operator.java Expression.java NopOperator.java ../type/Type.java ../AssertError.java LocalVarOperator.java MatchableOperator.java CombineableOperator.java LocalStoreOperator.java
+OuterLocalOperator.class: OuterLocalOperator.java Operator.java ../decompiler/LocalInfo.java ../GlobalOptions.java Expression.java ../decompiler/TabbedPrintWriter.java
+PopOperator.class: PopOperator.java Operator.java ../type/Type.java Expression.java
+PrePostFixOperator.class: PrePostFixOperator.java Operator.java Expression.java ../decompiler/TabbedPrintWriter.java
+PutFieldOperator.class: PutFieldOperator.java FieldOperator.java LValueExpression.java GetFieldOperator.java
+ShiftOperator.class: ShiftOperator.java BinaryOperator.java Operator.java Expression.java ../type/Type.java
+SimpleOperator.class: SimpleOperator.java Operator.java
+StoreInstruction.class: StoreInstruction.java Operator.java CombineableOperator.java LValueExpression.java NopOperator.java ../type/Type.java Expression.java ../AssertError.java MatchableOperator.java ConstOperator.java PrePostFixOperator.java ../decompiler/TabbedPrintWriter.java
+StringAddOperator.class: StringAddOperator.java Operator.java Expression.java ../type/Type.java ../decompiler/TabbedPrintWriter.java
+ThisOperator.class: ThisOperator.java NoArgOperator.java ../decompiler/TabbedPrintWriter.java ../type/Type.java
+UnaryOperator.class: UnaryOperator.java Operator.java NopOperator.java ../type/Type.java Expression.java ../decompiler/TabbedPrintWriter.java ../decompiler/Options.java

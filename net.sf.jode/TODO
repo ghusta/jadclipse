@@ -1,0 +1,35 @@
+This is a list of features, that would be nice to have:
+
+Decompiler:
+ - outline inlined methods.
+ - remove string decrypt method.
+ - remove synthetic methods if and only if all calls to them are resolved.
+
+Obfuscator:
+ - flow obfuscation/optimization.
+ - warn about Class.forName and list occurences.
+ - detect Class.forName on constant strings and handle appropriately.
+ - work around Class.forName, by creating a new version using a hash
+   table that maps md5 sums of old names to obfuscated names.
+
+DeObfuscator:
+ - generate nice names:
+    - classes: derive name from super. 
+    - fields:  derive name from type.
+ - give synthetic methods the right attribute and name (e.g. class$)
+ - detect inner classes and give suitable names.
+ 
+User Interface:
+ - make a nice user interface:
+   - list fields/method of selected class.
+   - show only decompilation of selected method.
+   - show usage of method/fields.
+ - syntax highlighting, hyper links etc.  
+	(look at java.swing.JEditorPane or at Java Insight)
+ - visual obfuscation/deobfuscation (like klassmaster?, better?)
+
+Internal:
+ - clean up package hierarchy, esp. expr, flow and decompiler.
+ - move to net.sf.jode package.
+ - make the class names more precise, e.g. StructuredBlock is Statement,
+   FlowBlock is BasicBlock.

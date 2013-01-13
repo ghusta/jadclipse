@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JAD Decompiler Plug-in
+Bundle-SymbolicName: net.sf.jdtdecompiler.jad;singleton:=true
+Bundle-Version: 3.4.0.v20090220
+Bundle-Activator: net.sf.jdtdecompiler.jad.JadPlugin
+Bundle-Vendor: jadclipse.sf.net
+Require-Bundle: org.eclipse.core.runtime,
+ net.sf.jdtdecompiler.core,
+ org.eclipse.jface,
+ org.eclipse.ui,
+ org.eclipse.jdt.core,
+ net.sf.jdtdecompiler.ui
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy

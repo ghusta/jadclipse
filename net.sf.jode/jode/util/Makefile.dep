@@ -1,0 +1,7 @@
+# This dependency file is automatically created by ../../javaDependencies.pl from class files.
+# Do not edit.
+
+ArrayEnum.class: ArrayEnum.java
+SimpleMap.class: SimpleMap.java SimpleSet.java
+SimpleSet.class: SimpleSet.java ../AssertError.java
+UnifyHash.class: UnifyHash.java

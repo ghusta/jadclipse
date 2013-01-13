@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.sf.jdtdecompiler.feature"
+      label="JDT Decompiler Feature"
+      version="3.4.0.v20090220"
+      provider-name="jadclipse.sf.net">
+
+   <description url="http://jadclipse.sf.net">
+      JDT Decompiler provides an editor for decompiled classes. Multiple back-end decompilers are supported using an extension point. The decompiler to be used can be chosen from the preferences or from the context menu of the editor.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright (c) 2001, 2009 JadClipse project committers and others.
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse Public License (EPL) 1.0
+   </license>
+
+   <url>
+      <update label="JadClipse" url="http://jadclipse.sourceforge.net/update"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.jdt.ui"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.debug.ui" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="net.sf.jdtdecompiler.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.jdtdecompiler.jad"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.jdtdecompiler.jd"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.jdtdecompiler.jode"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.jdtdecompiler.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.jode"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

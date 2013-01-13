@@ -1,0 +1,12 @@
+# This dependency file is automatically created by ../../javaDependencies.pl from class files.
+# Do not edit.
+
+CodeVerifier.class: CodeVerifier.java ../bytecode/Opcodes.java ../bytecode/MethodInfo.java ../bytecode/ClassInfo.java ../bytecode/TypeSignature.java ../bytecode/BytecodeInfo.java VerifyException.java ../bytecode/Instruction.java ../bytecode/Reference.java ../AssertError.java ../bytecode/Handler.java ../GlobalOptions.java
+Interpreter.class: Interpreter.java ../bytecode/Opcodes.java ../bytecode/BytecodeInfo.java Value.java ../bytecode/MethodInfo.java ../bytecode/TypeSignature.java InterpreterException.java ../GlobalOptions.java ../bytecode/Instruction.java RuntimeEnvironment.java ../bytecode/Reference.java NewObject.java ../AssertError.java ../bytecode/Handler.java
+InterpreterException.class: InterpreterException.java
+NewObject.class: NewObject.java
+RuntimeEnvironment.class: RuntimeEnvironment.java InterpreterException.java
+SimpleRuntimeEnvironment.class: SimpleRuntimeEnvironment.java RuntimeEnvironment.java InterpreterException.java ../bytecode/Reference.java ../bytecode/TypeSignature.java
+SyntheticAnalyzer.class: SyntheticAnalyzer.java ../bytecode/Opcodes.java ../bytecode/MethodInfo.java ../bytecode/BytecodeInfo.java ../bytecode/Handler.java ../bytecode/Instruction.java ../bytecode/Reference.java ../bytecode/TypeSignature.java ../bytecode/ClassInfo.java ../bytecode/FieldInfo.java ../type/Type.java ../type/MethodType.java
+Value.class: Value.java NewObject.java
+VerifyException.class: VerifyException.java

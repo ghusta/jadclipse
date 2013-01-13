@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JODE Decompiler Plug-in
+Bundle-SymbolicName: net.sf.jdtdecompiler.jode;singleton:=true
+Bundle-Version: 3.4.0.v20090220
+Bundle-Activator: net.sf.jdtdecompiler.jode.JodePlugin
+Bundle-Vendor: jadclipse.sf.net
+Require-Bundle: org.eclipse.core.runtime,
+ net.sf.jdtdecompiler.core,
+ org.eclipse.jface,
+ org.eclipse.ui,
+ org.eclipse.jdt.core,
+ net.sf.jode
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy

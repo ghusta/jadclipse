@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN">
+<html>
+<head>
+<title>Java Optimize and Decompile Environment (JODE)</title>
+<meta name="date" content="2001-05-29">
+<meta name="description" content="JODE - Java Optimize and Decompile Environment.">
+<meta name="author" content="Jochen Hoenicke">
+<meta name="keywords" content="jode, java, decompiler, obfuscator, deobfuscator, reverse engineering, free, GPL">
+<style type="text/css">
+<!--
+body { color:#000000; background-color: #FFFFFF; }
+.nav { font-family: Helvetica, Arial, sans-serif; font-weight: bold;
+       color:#000000; background-color: #EEEEF8; }
+.footer { color:#FFFFFF; background-color: #737B9C; }
+.boldlink { font-weight:bold; text-decoration: none; color:#FFFFFF; }
+//-->
+</style>
+</head>
+
+<body text=#000000 bgcolor=#FFFFFF>
+
+<table cellpadding=4 cellspacing=1 width="100%"
+  ><tr
+    ><td align="left"
+      ><img src="jode-logo.gif" alt="JODE" width=286 height=110
+    ></td
+    ><td align="right"
+      >Powered by <a href="http://sourceforge.net"><img
+      src="http://sourceforge.net/sflogo.php?group_id=3790&type=1"
+      border=0 width=88 height=31 alt="SourceForge"></a><br
+      >Best viewed with <a
+      href="http://www.anybrowser.org/campaign/"><img
+      src="a-logo.gif" border=0 width=88 height=31 alt="Any
+      Browser"></a><br
+    ></td
+  ></tr
+></table>
+
+
+<table cellspacing=0 cellpadding=3 border=0 bgcolor=#EEEEF8 class="nav">
+<tr><td class="nav">
+<a href="./"><B>Home</B></a> |
+<a href="http://sourceforge.net/project/?group_id=3790">Project&nbsp;page</a> |
+<a href="./applet.htp">Applet</a> |
+<a href="./download.htp">Download</a> |
+<a href="./faq.htp">FAQ</a> |
+<a href="./feedback.htp">Feedback</a> |
+<a href="./usage.htp">Documentation</a> |
+<a href="./license.htp">License</a> |
+<a href="./history.htp">History</a> |
+<a href="./links.htp">Links</a> |
+<a href="./bluesky.htp">Blue&nbsp;Sky</a></td></tr>
+</table><br>
+
+<h1>History</h1> 
+
+<p>Someday I found <code>guavad</code>, a disassembler for java byte
+code (it does similar things like <code>javap&nbsp;-c</code>).  I used
+it on a class file, and found that it was possible to reconstruct the
+original java code.  First I did it by hand on some small routines,
+but I soon realized that it was a rather stupid task.  So I wrote a
+small <a href="dasm_to_java.perl"><code>perl</code> script</a> that
+did this process automatically.  At the end of the next day I had my
+first working decompiler.</p>
+
+<p>Now while the <code>perl</code> script is working, it is not easy
+to use.  You have to decompile the code first with a disassembler, cut
+out the code of a single method, and run the perl script on it.  I
+decided to get the bytecode directly out of the class files and do
+this all automatically.  I decided to write it in <code>java</code>
+now, because it suited best.</p>
+
+<p>Just for the records: the java code is now more than 50 times
+bigger than the original perl script and is still growing.</p>
+<TABLE class=footer width="100%" border="0" cellspacing="0" cellpadding="2">
+  <TR>
+    <TD align="center"><SPAN class=footer>
+      All trademarks and copyrights on this page are properties of their respective owners. <br>
+      Last updated on 29-May-2001, 
+      Copyright &copy; 1998-2001 by Jochen Hoenicke.
+      Canonic URL is <a class=boldlink href="http://jode.sourceforge.net/">http://jode.sourceforge.net/</a></SPAN>
+    </TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>
+

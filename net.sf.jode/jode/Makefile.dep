@@ -1,0 +1,5 @@
+# This dependency file is automatically created by ../javaDependencies.pl from class files.
+# Do not edit.
+
+AssertError.class: AssertError.java
+GlobalOptions.class: GlobalOptions.java

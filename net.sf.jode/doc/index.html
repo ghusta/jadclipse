@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN">
+<html>
+<head>
+<title>Java Optimize and Decompile Environment (JODE)</title>
+<meta name="date" content="2001-05-29">
+<meta name="description" content="JODE - Java Optimize and Decompile Environment.">
+<meta name="author" content="Jochen Hoenicke">
+<meta name="keywords" content="jode, java, decompiler, obfuscator, deobfuscator, reverse engineering, free, GPL">
+<style type="text/css">
+<!--
+body { color:#000000; background-color: #FFFFFF; }
+.nav { font-family: Helvetica, Arial, sans-serif; font-weight: bold;
+       color:#000000; background-color: #EEEEF8; }
+.footer { color:#FFFFFF; background-color: #737B9C; }
+.boldlink { font-weight:bold; text-decoration: none; color:#FFFFFF; }
+//-->
+</style>
+</head>
+
+<body text=#000000 bgcolor=#FFFFFF>
+
+<table cellpadding=4 cellspacing=1 width="100%"
+  ><tr
+    ><td align="left"
+      ><img src="jode-logo.gif" alt="JODE" width=286 height=110
+    ></td
+    ><td align="right"
+      >Powered by <a href="http://sourceforge.net"><img
+      src="http://sourceforge.net/sflogo.php?group_id=3790&type=1"
+      border=0 width=88 height=31 alt="SourceForge"></a><br
+      >Best viewed with <a
+      href="http://www.anybrowser.org/campaign/"><img
+      src="a-logo.gif" border=0 width=88 height=31 alt="Any
+      Browser"></a><br
+    ></td
+  ></tr
+></table>
+
+
+<table cellspacing=0 cellpadding=3 border=0 bgcolor=#EEEEF8 class="nav">
+<tr><td class="nav">
+<a href="./"><B>Home</B></a> |
+<a href="http://sourceforge.net/project/?group_id=3790">Project&nbsp;page</a> |
+<a href="./applet.htp">Applet</a> |
+<a href="./download.htp">Download</a> |
+<a href="./faq.htp">FAQ</a> |
+<a href="./feedback.htp">Feedback</a> |
+<a href="./usage.htp">Documentation</a> |
+<a href="./license.htp">License</a> |
+<a href="./history.htp">History</a> |
+<a href="./links.htp">Links</a> |
+<a href="./bluesky.htp">Blue&nbsp;Sky</a></td></tr>
+</table><br>
+
+ 
+
+<P><i>JODE</i> is a java package containing a decompiler and an
+optimizer for java.  This package is <a href="./license.htp">freely available</a> under the GNU GPL.<p>
+
+<P>The decompiler reads in <tt>class</tt> files and produces something
+similar to the original <tt>java</tt> file.  Of course this can't be
+perfect: There is no way to produce the comments or the names of local
+variables (except when compiled with debuging) and there are often
+more ways to write the same thing.  However, <i>JODE</i> does its job quite
+well, so you should give it a try and <a href="./applet.htp">start the
+applet</a>.</P>
+
+<P>The optimizer transforms <tt>class</tt> files in various ways with
+can be controlled by a script file. It supports the following
+operations:</p>
+<ul>
+<li>Renaming class, method, field and local names to shorter,
+obfuscated, or unique names or according to a given translation
+table</li>
+<li>Removing debugging information</li>
+<li>Removing dead code (classes, fields, methods) and constant
+fields</li>
+<li>Optimizing local variable allocation</li>
+</ul>
+
+<h2>News</h2>
+
+<ul>
+<li><i>JODE</i> 1.1 is out. With support for javac v8 (jdk 1.3). </li>
+<li><i>JODE</i> is now hosted by <a href="http://sourceforge.net/">SourceForge</a>.</li>
+<li>Now long lines are automatically broken.</li>
+<li><b>Inner and anonymous</b> classes are automatically decompiled.</li>
+<li>The optimizer (aka obfuscator) can be customized via a small
+config file</li>
+</ul>
+
+<h2>Known bugs of the decompiler</h2>
+
+<p>Some jdk1.3 synthetic access functions aren't understood.  The
+   produced source contains access$xxx functions, but it still compiles.</p>
+
+<p>There may be other bugs, that cause Exceptions or invalid code.
+   If you have such a problems don't hesitate to issue a bug report.
+   Please include the <code>class</code> file if possible.</p>
+
+<h2>Limitations</h2>
+
+<p>If not all dependent classes can be found, the verifier (which is
+   run before decompilation starts) may exit with a type error.  You
+   can decompile it with <tt>--verify=off</tt>, but take the warning
+   serious, that types may be incorrect.  There's sometimes no way to
+   guess the right type, if you don't have access the full class
+   hierarchie.<br>
+
+   This is not a bug in the verifier: java will complain the same way,
+   if it is run with bytecode verification turned on. And if you don't
+   have the dependent classes, you can't compile the code again.</p>
+
+<p>There may be situations, where the code doesn't understand complex
+expressions. In this case many ugly temporary variables are used, but
+the code should still be compileable.  This does especially happen
+when you compile with <tt>`-O'</tt> flag and javac has inlined some
+methods. </p>
+
+<TABLE class=footer width="100%" border="0" cellspacing="0" cellpadding="2">
+  <TR>
+    <TD align="center"><SPAN class=footer>
+      All trademarks and copyrights on this page are properties of their respective owners. <br>
+      Last updated on 29-May-2001, 
+      Copyright &copy; 1998-2001 by Jochen Hoenicke.
+      Canonic URL is <a class=boldlink href="http://jode.sourceforge.net/">http://jode.sourceforge.net/</a></SPAN>
+    </TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>

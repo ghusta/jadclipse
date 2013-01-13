@@ -1,0 +1,32 @@
+New in 1.1
+* break long lines
+* handle most of javac v8 constructs (jdk 1.3)
+* bug fixes
+
+New in 1.0.93
+* anonymous and inner class decompilation reworked.
+* replaced a bash specific construct in acinclude.m4
+* fixed a funny bug:  string += "1" was decompiled as string++
+* main class of decompiler is now jode.decompiler.Main
+* fixed a bug in ConstantAnalyzer (obfuscator) (produced wrong code)
+* fixed more bugs in obfuscator
+* better memory usage in decompiler
+* fixed a bug in decompiler (couldn't handle nop instruction)
+* web pages updated.
+
+New in 1.0.92
+* option --pretty works again
+* web pages updated
+* swingui can show class hierarchie
+* KeywordRenamer added to obfuscator.
+
+New in 1.0.91:
+* first version using configure.  Jode can now be almost automatically
+  build, see INSTALL for instructions.
+* the decompiler can handler inner and anoymous classes.
+* you now need the gnu getopt package.
+* you need JDK 1.2 or alternatively the swing and collection packages
+  for 1.1
+
+
+

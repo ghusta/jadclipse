@@ -1,0 +1,20 @@
+# This dependency file is automatically created by ../../javaDependencies.pl from class files.
+# Do not edit.
+
+ClassBundle.class: ClassBundle.java OptionHandler.java ../bytecode/ClassInfo.java ../GlobalOptions.java Main.java modules/WildCard.java IdentifierMatcher.java modules/MultiIdentifierMatcher.java CodeTransformer.java CodeAnalyzer.java Renamer.java ../bytecode/Reference.java Identifier.java ClassIdentifier.java PackageIdentifier.java TranslationTable.java modules/SimpleAnalyzer.java
+ClassIdentifier.class: ClassIdentifier.java Identifier.java ../bytecode/Reference.java FieldIdentifier.java MethodIdentifier.java Main.java ../bytecode/ClassInfo.java ClassBundle.java ../GlobalOptions.java ../bytecode/FieldInfo.java ../bytecode/MethodInfo.java ../bytecode/InnerClassInfo.java PackageIdentifier.java IdentifierMatcher.java modules/ModifierMatcher.java
+CodeAnalyzer.class: CodeAnalyzer.java CodeTransformer.java
+CodeTransformer.class: CodeTransformer.java
+ConstantRuntimeEnvironment.class: ConstantRuntimeEnvironment.java ../jvm/SimpleRuntimeEnvironment.java ../jvm/InterpreterException.java Main.java ClassBundle.java FieldIdentifier.java ../bytecode/Reference.java MethodIdentifier.java ../bytecode/MethodInfo.java ../jvm/Interpreter.java ../bytecode/TypeSignature.java
+FieldIdentifier.class: FieldIdentifier.java Identifier.java Main.java ClassBundle.java ClassIdentifier.java ../bytecode/FieldInfo.java
+Identifier.class: Identifier.java Main.java ../GlobalOptions.java Renamer.java IdentifierMatcher.java
+IdentifierMatcher.class: IdentifierMatcher.java
+LocalIdentifier.class: LocalIdentifier.java Identifier.java
+Main.class: Main.java ../GlobalOptions.java ClassBundle.java ScriptParser.java ParseException.java
+MethodIdentifier.class: MethodIdentifier.java Identifier.java ../bytecode/Opcodes.java Main.java ClassBundle.java ../GlobalOptions.java ../bytecode/MethodInfo.java CodeAnalyzer.java ClassIdentifier.java ../AssertError.java CodeTransformer.java ../bytecode/BytecodeInfo.java ../bytecode/Instruction.java ../bytecode/Handler.java
+OptionHandler.class: OptionHandler.java
+PackageIdentifier.class: PackageIdentifier.java Identifier.java Main.java ../bytecode/ClassInfo.java ClassIdentifier.java ../GlobalOptions.java ClassBundle.java IdentifierMatcher.java
+ParseException.class: ParseException.java
+Renamer.class: Renamer.java
+ScriptParser.class: ScriptParser.java ParseException.java OptionHandler.java
+TranslationTable.class: TranslationTable.java

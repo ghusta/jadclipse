@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="net.sf.jdtdecompiler.core.decompilers">
+      <decompiler
+            class="net.sf.jdtdecompiler.jd.JdDecompiler"
+            id="net.sf.jdtdecompiler.jd.JdDecompiler"
+            name="JD">
+      </decompiler>
+   </extension>
+
+</plugin>

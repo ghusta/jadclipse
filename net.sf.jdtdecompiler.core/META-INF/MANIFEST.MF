@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JDT-Decompiler Core Plug-in
+Bundle-SymbolicName: net.sf.jdtdecompiler.core;singleton:=true
+Bundle-Version: 3.4.0.v20090220
+Bundle-Activator: net.sf.jdtdecompiler.core.JdtDecompilerCorePlugin
+Bundle-Vendor: jadclipse.sf.net
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jdt.core,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Export-Package: net.sf.jdtdecompiler.core

@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JDT-Decompiler UI Plug-in
+Bundle-SymbolicName: net.sf.jdtdecompiler.ui;singleton:=true
+Bundle-Version: 3.4.0.v20090220
+Bundle-Activator: net.sf.jdtdecompiler.ui.JdtDecompilerUiPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jdt.ui,
+ org.eclipse.jdt.core,
+ org.eclipse.ui.editors,
+ net.sf.jdtdecompiler.core,
+ org.eclipse.core.resources,
+ org.eclipse.debug.ui;bundle-version="3.4.1"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: net.sf.jdtdecompiler.ui.fieldeditors
+Bundle-Vendor: jadclipse.sf.net

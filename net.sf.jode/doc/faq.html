@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN">
+<html>
+<head>
+<title>Java Optimize and Decompile Environment (JODE)</title>
+<meta name="date" content="2001-05-29">
+<meta name="description" content="JODE - Java Optimize and Decompile Environment.">
+<meta name="author" content="Jochen Hoenicke">
+<meta name="keywords" content="jode, java, decompiler, obfuscator, deobfuscator, reverse engineering, free, GPL">
+<style type="text/css">
+<!--
+body { color:#000000; background-color: #FFFFFF; }
+.nav { font-family: Helvetica, Arial, sans-serif; font-weight: bold;
+       color:#000000; background-color: #EEEEF8; }
+.footer { color:#FFFFFF; background-color: #737B9C; }
+.boldlink { font-weight:bold; text-decoration: none; color:#FFFFFF; }
+//-->
+</style>
+</head>
+
+<body text=#000000 bgcolor=#FFFFFF>
+
+<table cellpadding=4 cellspacing=1 width="100%"
+  ><tr
+    ><td align="left"
+      ><img src="jode-logo.gif" alt="JODE" width=286 height=110
+    ></td
+    ><td align="right"
+      >Powered by <a href="http://sourceforge.net"><img
+      src="http://sourceforge.net/sflogo.php?group_id=3790&type=1"
+      border=0 width=88 height=31 alt="SourceForge"></a><br
+      >Best viewed with <a
+      href="http://www.anybrowser.org/campaign/"><img
+      src="a-logo.gif" border=0 width=88 height=31 alt="Any
+      Browser"></a><br
+    ></td
+  ></tr
+></table>
+
+
+<table cellspacing=0 cellpadding=3 border=0 bgcolor=#EEEEF8 class="nav">
+<tr><td class="nav">
+<a href="./"><B>Home</B></a> |
+<a href="http://sourceforge.net/project/?group_id=3790">Project&nbsp;page</a> |
+<a href="./applet.htp">Applet</a> |
+<a href="./download.htp">Download</a> |
+<a href="./faq.htp">FAQ</a> |
+<a href="./feedback.htp">Feedback</a> |
+<a href="./usage.htp">Documentation</a> |
+<a href="./license.htp">License</a> |
+<a href="./history.htp">History</a> |
+<a href="./links.htp">Links</a> |
+<a href="./bluesky.htp">Blue&nbsp;Sky</a></td></tr>
+</table><br>
+
+ 
+
+<h1>FAQ - Frequently Asked Questions</h1>
+
+This is a list of some questions that pop up from time to time.
+
+<h2>Decompiler issues</h2>
+
+<h3>The decompiler crashes with a VerifyException, what can I do?</h3>
+
+<p>The class isn't verifiable, probably because there is not enough
+information about used classes.  See the question about the
+classpath.</p>
+
+<p>This could also be caused by malicious bytecode, or because there
+is a bug in Jode's verifier.</p>
+
+<h3>What should be included in the classpath?</h3>
+
+<p>Jode needs to know the full class hierarchie to guess the types.
+This includes not only the classes in the program, but also the
+libraries used by the java program, even the Java runtime library.
+You should set the classpath to include all these classes.</p>
+
+<p>If you don't specify the classpath on the command line, Jode uses
+the same as your Java Virtual Machine.</p>
+
+<p>As last resort, if Jode can't find a class in the classpath it uses
+reflection to ask the Virtual Machine.  This works quite well, but
+loading classes can have side effects, e.g. when AWT classes are
+loaded, an AWT thread is created, even though Jode doesn't need
+it.</p>
+
+<h3>Why doesn't Jode decompile my inner class
+<code>MyClass$Inner.class</code>?</h3>
+
+<p>You should decompile the outermost class (<code>MyClass</code> in
+this case).  The produced code contains the inner class.  </p>
+
+<h2>Obfuscator issues</h2>
+
+<h3>What should be included in the classpath?</h3>
+
+<p>The program, all libraries, the Java runtime library.  Don't omit a
+library even when you don't want to obfuscate it.</p>
+
+<h3>What should I preserve</h3>
+
+<p>The most common mistake is to preserve a class.  In most cases this
+is not what you want.  This only makes sure the class won't be
+renamed, it doesn't prevent it from being stripped.  Instead you
+should preserve methods and constructors.  The constructor is just a
+method with the special name <tt>&lt;init&rt;</tt>. </p>
+
+<p> Another common mistake is to omit the type
+signature, e.g. to preserve <tt>Class.main</tt> instead of
+<tt>Class.main.([Ljava/lang/String;)V</tt>.  That doesn't work.  If
+you don't want to care about the format of the type signature use a
+wildcard as in <tt>Class.main.*</tt>. </p>
+
+<h3>What is a type signature</h3>
+
+<p>The type signature is a machine readable representation of a java
+type that is used all over in java bytecode.  The JDK ships a command
+named <tt>javap</tt>.  With <tt>java -s</tt> you can lists the fields
+and methods of a class with their type signatures.</p>
+
+<p> If you are interested in the format of type signatures read the
+Java Virtual Machine Specification, Chapter 4.3 Descriptors</p>
+
+<TABLE class=footer width="100%" border="0" cellspacing="0" cellpadding="2">
+  <TR>
+    <TD align="center"><SPAN class=footer>
+      All trademarks and copyrights on this page are properties of their respective owners. <br>
+      Last updated on 29-May-2001, 
+      Copyright &copy; 1998-2001 by Jochen Hoenicke.
+      Canonic URL is <a class=boldlink href="http://jode.sourceforge.net/">http://jode.sourceforge.net/</a></SPAN>
+    </TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>
+
