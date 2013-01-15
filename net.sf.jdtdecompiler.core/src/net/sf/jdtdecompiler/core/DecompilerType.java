@@ -68,11 +68,9 @@ public class DecompilerType {
     public IDecompiler getDecompiler() {
         IDecompiler decompiler = null;
         try {
-            decompiler = (IDecompiler) configElement
-                    .createExecutableExtension(ATT_CLASS);
+            decompiler = (IDecompiler) configElement.createExecutableExtension(ATT_CLASS);
         } catch (CoreException e) {
-            JdtDecompilerCorePlugin.logError(e,
-                    "Creating decompiler instance failed for id=" + id);
+            JdtDecompilerCorePlugin.logError(e, "Creating decompiler instance failed for id=" + id);
         }
         return decompiler;
     }
@@ -94,12 +92,12 @@ public class DecompilerType {
                 .getExtensions();
         List<DecompilerType> found = new ArrayList<DecompilerType>();
         for (int i = 0; i < extensions.length; i++) {
-            IConfigurationElement[] configElements = extensions[i]
-                    .getConfigurationElements();
+            IConfigurationElement[] configElements = extensions[i].getConfigurationElements();
             for (int j = 0; j < configElements.length; j++) {
                 DecompilerType proxy = parseType(configElements[j]);
-                if (proxy != null)
+                if (proxy != null) {
                     found.add(proxy);
+                }
             }
         }
         cachedTypes = found.toArray(new DecompilerType[found.size()]);
@@ -116,8 +114,7 @@ public class DecompilerType {
         cachedTypes = null;
     }
 
-    private static DecompilerType parseType(
-            IConfigurationElement configElement) {
+    private static DecompilerType parseType(IConfigurationElement configElement) {
         if (!configElement.getName().equals(TAG_DECOMPILER)) {
             return null;
         }
@@ -128,18 +125,14 @@ public class DecompilerType {
             if (name == null) {
                 name = "[missing name attribute]";
             }
-            String msg = "Failed to load decompiler named "
-                    + name
-                    + " in "
-                    + configElement.getDeclaringExtension().getContributor()
-                            .getName();
+            String msg = "Failed to load decompiler named " + name + " in "
+                    + configElement.getDeclaringExtension().getContributor().getName();
             JdtDecompilerCorePlugin.logError(e, msg);
             return null;
         }
     }
 
-    private static String getAttribute(IConfigurationElement configElem,
-            String name) {
+    private static String getAttribute(IConfigurationElement configElem, String name) {
         String value = configElem.getAttribute(name);
         if (value != null) {
             return value;

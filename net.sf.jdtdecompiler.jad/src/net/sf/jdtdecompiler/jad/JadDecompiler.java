@@ -22,8 +22,7 @@ public class JadDecompiler implements IDecompiler {
     /* (non-Javadoc)
      * @see net.sf.jdtdecompiler.core.IDecompiler#decompile(java.lang.String, boolean, java.lang.String)
      */
-    public String decompile(String rootPath, boolean isArchive,
-            String fullClassName) {
+    public String decompile(String rootPath, boolean isArchive, String fullClassName) {
         String source = null;
 
         File workingDir = null;
@@ -34,8 +33,7 @@ public class JadDecompiler implements IDecompiler {
                     + System.currentTimeMillis();
             workingDir = new File(tmpDir);
             workingDir.mkdirs();
-            JarClassExtractor.extract(rootPath, packagePath, className,
-                    workingDir.getAbsolutePath());
+            JarClassExtractor.extract(rootPath, packagePath, className, workingDir.getAbsolutePath());
         } else {
             workingDir = new File(rootPath, packagePath);
         }
@@ -86,8 +84,7 @@ public class JadDecompiler implements IDecompiler {
             Writer errWriter = createOutWriter();
             String[] cmdLine = buildCmdLine(className);
 
-            Process p = Runtime.getRuntime().exec(cmdLine, new String[] {},
-                    workingDir);
+            Process p = Runtime.getRuntime().exec(cmdLine, new String[] {}, workingDir);
             StreamRedirectThread outRedirect = new StreamRedirectThread(
                     "output_reader", p.getInputStream(), outWriter);
             StreamRedirectThread errRedirect = new StreamRedirectThread(
@@ -108,8 +105,7 @@ public class JadDecompiler implements IDecompiler {
 
             source = outWriter.toString();
             if (source == null || source.length() == 0) {
-                JadPlugin.logError(new Throwable(),
-                        "Couldn't get source from jad");
+                JadPlugin.logError(new Throwable(), "Couldn't get source from jad");
                 return null;
             }
 
@@ -149,8 +145,9 @@ public class JadDecompiler implements IDecompiler {
         cmdLine.add(IJadOptions.OPTION_SENDSTDOUT);
 
         String indent = settings.getString(IJadOptions.OPTION_INDENT_SPACE);
-        if (indent.equals(IJadOptions.USE_TAB))
+        if (indent.equals(IJadOptions.USE_TAB)) {
             cmdLine.add(IJadOptions.OPTION_INDENT_TAB);
+        }
         else {
             try {
                 Integer.parseInt(indent);
@@ -161,29 +158,32 @@ public class JadDecompiler implements IDecompiler {
 
         // toggles
         for (int i = 0; i < IJadOptions.TOGGLE_OPTION.length; i++) {
-            if (settings.getBoolean(IJadOptions.TOGGLE_OPTION[i]))
+            if (settings.getBoolean(IJadOptions.TOGGLE_OPTION[i])) {
                 cmdLine.add(IJadOptions.TOGGLE_OPTION[i]);
+            }
         }
 
         // integers, 0 means disabled
         int iValue;
         for (int i = 0; i < IJadOptions.VALUE_OPTION_INT.length; i++) {
             iValue = settings.getInt(IJadOptions.VALUE_OPTION_INT[i]);
-            if (iValue > 0)
+            if (iValue > 0) {
                 cmdLine.add(IJadOptions.VALUE_OPTION_INT[i] + iValue);
+            }
         }
 
         // strings, "" means disabled
         String sValue;
         for (int i = 0; i < IJadOptions.VALUE_OPTION_STRING.length; i++) {
             sValue = settings.getString(IJadOptions.VALUE_OPTION_STRING[i]);
-            if (sValue != null && sValue.length() > 0)
+            if (sValue != null && sValue.length() > 0) {
                 cmdLine.add(IJadOptions.VALUE_OPTION_STRING[i] + " " + sValue);
+            }
 
         }
 
         cmdLine.add(classFileName);
-        return (String[]) cmdLine.toArray(new String[cmdLine.size()]);
+        return cmdLine.toArray(new String[cmdLine.size()]);
     }
 
 }

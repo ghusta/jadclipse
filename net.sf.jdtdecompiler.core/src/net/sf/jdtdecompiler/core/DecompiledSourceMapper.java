@@ -25,7 +25,7 @@ public class DecompiledSourceMapper extends SourceMapper {
         char[] source = super.findSource(fullJavaName);
 
         if (source == null) {
-                source = invokeDecompiler(fullJavaName);
+            source = invokeDecompiler(fullJavaName);
         }
 
         return source;

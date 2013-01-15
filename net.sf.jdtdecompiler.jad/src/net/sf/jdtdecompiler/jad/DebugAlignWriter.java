@@ -36,8 +36,9 @@ public class DebugAlignWriter extends Writer {
      * @see Writer#close()
      */
     public void close() throws IOException {
-        if (lineContent.length() != 0)
+        if (lineContent.length() != 0) {
             out.write(lineContent.toString());
+        }
         out.flush();
         out.close();
         // System.err.println("Time spent in write: " + write);
@@ -68,13 +69,16 @@ public class DebugAlignWriter extends Writer {
                 aLine = cleanComment(lineContent.toString());
                 lineContent.setLength(0);
 
-                if (aLine.length() == 0)
+                if (aLine.length() == 0) {
                     continue;
+                }
 
                 if ((align = getAlignTarget(aLine)) != -1) {
                     if (align < curLine) {
-                        if (curLine != 0) // not in initial state
+                        // not in initial state
+                        if (curLine != 0) {
                             out.write('\n');
+                        }
                         out.write("/* <-MISALIGNED-> */ ");
                         out.write(aLine);
                         curLine++;
@@ -89,8 +93,10 @@ public class DebugAlignWriter extends Writer {
                         out.write(aLine);
                     }
                 } else {
-                    if (curLine != 0) // not in initial state
+                    // not in initial state
+                    if (curLine != 0) {
                         out.write('\n');
+                    }
                     curLine++;
                     out.write(aLine);
                 }
@@ -112,13 +118,15 @@ public class DebugAlignWriter extends Writer {
      * @return target line number or -1 if this line doesn't need to be aligned
      */
     int getAlignTarget(String line) {
-        if (!line.startsWith("/*"))
+        if (!line.startsWith("/*")) {
             return -1;
+        }
 
         int end = line.indexOf("*/", 2);
 
-        if (end == -1)
+        if (end == -1) {
             return -1;
+        }
 
         try {
             return Integer.parseInt(line.substring(2, end).trim());
@@ -138,11 +146,13 @@ public class DebugAlignWriter extends Writer {
     String cleanComment(String line) {
         int comment = line.indexOf("//");
 
-        if (comment == -1)
+        if (comment == -1) {
             return line;
+        }
 
-        if (comment == 0 || line.trim().startsWith("//"))
+        if (comment == 0 || line.trim().startsWith("//")) {
             return "";
+        }
 
         return line.substring(0, comment);
     }

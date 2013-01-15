@@ -17,8 +17,9 @@ public class NoWSFieldEditor extends StringFieldEditor {
     protected boolean doCheckState() {
         String value = getStringValue();
 
-        if (value == null)
+        if (value == null) {
             return true;
+        }
 
         return value.indexOf(' ') == -1 && value.indexOf('\t') == -1
                 && value.indexOf('\r') == -1 && value.indexOf('\n') == -1;

@@ -59,8 +59,7 @@ public class JadPlugin extends AbstractUIPlugin {
     }
 
     public static void logError(Throwable t, String message) {
-        getDefault().getLog().log(
-                new Status(Status.ERROR, PLUGIN_ID, 0, message, t));
+        getDefault().getLog().log(new Status(Status.ERROR, PLUGIN_ID, 0, message, t));
     }
 
     public String getTmpDir() {

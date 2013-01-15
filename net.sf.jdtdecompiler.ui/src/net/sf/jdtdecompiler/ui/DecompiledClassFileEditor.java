@@ -1,3 +1,4 @@
+
 package net.sf.jdtdecompiler.ui;
 
 import java.util.Map;
@@ -51,7 +52,7 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
             classEditorInput = (IClassFileEditorInput) input;
             PackageFragmentRoot root = extractPackageFragmentRoot();
             if (root != null) {
-                hijackSourceMapper((PackageFragmentRoot) root);
+                hijackSourceMapper(root);
             }
         }
 
@@ -64,8 +65,7 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
         }
         IClassFile file = classEditorInput.getClassFile();
 
-        IJavaElement element = file
-                .getAncestor(IJavaElement.PACKAGE_FRAGMENT_ROOT);
+        IJavaElement element = file.getAncestor(IJavaElement.PACKAGE_FRAGMENT_ROOT);
         if (element instanceof PackageFragmentRoot) {
             return (PackageFragmentRoot) element;
         }
@@ -98,13 +98,13 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
         try {
             SourceMapper mapper = root.getSourceMapper();
             if (!(mapper instanceof DecompiledSourceMapper)) {
-                IDecompiler decompiler = JdtDecompilerUiPlugin
-                        .getPreferredDecompiler();
+                IDecompiler decompiler = JdtDecompilerUiPlugin.getPreferredDecompiler();
 
                 IPath sourcePath;
                 sourcePath = root.getSourceAttachmentPath();
                 if (sourcePath == null) {
-                    sourcePath = root.getPath(); // attach root to itself
+                    // attach root to itself
+                    sourcePath = root.getPath();
                 }
 
                 String rootPath = null;

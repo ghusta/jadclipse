@@ -64,8 +64,7 @@ public class JadPreferencePageDebug extends FieldEditorPreferencePage
      */
     protected void initialize() {
         super.initialize();
-        boolean enabled = getPreferenceStore().getBoolean(
-                IJadOptions.OPTION_LNC);
+        boolean enabled = getPreferenceStore().getBoolean(IJadOptions.OPTION_LNC);
         alignEditor.setEnabled(enabled, getFieldEditorParent());
     }
 

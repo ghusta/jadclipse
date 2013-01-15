@@ -31,8 +31,7 @@ public class JarClassExtractor {
      * @param targetDir
      *            Target directory to extract class files to
      */
-    public static void extract(String archivePath, String packagePath,
-            String className, String targetDir) {
+    public static void extract(String archivePath, String packagePath, String className, String targetDir) {
         String prefix = null;
         try {
             prefix = packagePath + className;
@@ -51,8 +50,7 @@ public class JarClassExtractor {
         }
     }
 
-    private static void extractClass(String targetDir, ZipFile archive,
-            ZipEntry entry) throws IOException {
+    private static void extractClass(String targetDir, ZipFile archive, ZipEntry entry) throws IOException {
         InputStream in = null;
         OutputStream out = null;
         try {
