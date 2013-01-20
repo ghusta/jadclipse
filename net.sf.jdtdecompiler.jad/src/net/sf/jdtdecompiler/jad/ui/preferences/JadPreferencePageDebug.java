@@ -5,7 +5,6 @@ import net.sf.jdtdecompiler.jad.JadPlugin;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.PreferencePage;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
@@ -27,9 +26,7 @@ public class JadPreferencePageDebug extends FieldEditorPreferencePage
         setPreferenceStore(JadPlugin.getDefault().getPreferenceStore());
     }
 
-    /**
-     * @see PreferencePage#createControl(Composite)
-     */
+    @Override
     public void createControl(Composite parent) {
         super.createControl(parent);
         // WorkbenchHelp.setHelp(getControl(), new
@@ -37,9 +34,7 @@ public class JadPreferencePageDebug extends FieldEditorPreferencePage
         // IJavaHelpContextIds.JAVA_EDITOR_PREFERENCE_PAGE));
     }
 
-    /**
-     * @see FieldEditorPreferencePage#createFieldEditors()
-     */
+    @Override
     protected void createFieldEditors() {
         optionLncEditor = new BooleanFieldEditor(IJadOptions.OPTION_LNC,
                 "Output original line numbers as comments",
@@ -51,30 +46,17 @@ public class JadPreferencePageDebug extends FieldEditorPreferencePage
         addField(alignEditor);
     }
 
-    /**
-     * @see IWorkbenchPreferencePage#init(IWorkbench)
-     */
     public void init(IWorkbench arg0) {
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.jface.preference.FieldEditorPreferencePage#initialize()
-     */
+    @Override
     protected void initialize() {
         super.initialize();
         boolean enabled = getPreferenceStore().getBoolean(IJadOptions.OPTION_LNC);
         alignEditor.setEnabled(enabled, getFieldEditorParent());
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.eclipse.jface.util.IPropertyChangeListener#propertyChange(org.eclipse
-     * .jface.util.PropertyChangeEvent)
-     */
+    @Override
     public void propertyChange(PropertyChangeEvent event) {
         if (event.getSource() == optionLncEditor) {
             boolean enabled = event.getNewValue().equals(Boolean.TRUE);

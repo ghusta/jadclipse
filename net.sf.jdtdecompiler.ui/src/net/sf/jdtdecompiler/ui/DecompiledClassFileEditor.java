@@ -45,6 +45,7 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
             }
         }};
 
+    @Override
     protected IEditorInput transformEditorInput(IEditorInput input) {
         input = super.transformEditorInput(input);
 
@@ -73,9 +74,7 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
         return null;
     }
 
-    /*
-     * @see AbstractTextEditor#editorContextMenuAboutToShow(IMenuManager)
-     */
+    @Override
     public void editorContextMenuAboutToShow(IMenuManager menu) {
         super.editorContextMenuAboutToShow(menu);
 
@@ -157,6 +156,7 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
         }
     }
 
+    @Override
     public void dispose() {
 	    IEclipsePreferences preferences = InstanceScope.INSTANCE.getNode(JdtDecompilerUiPlugin.PLUGIN_ID);
 	    preferences.removePreferenceChangeListener(preferenceChangeListener);

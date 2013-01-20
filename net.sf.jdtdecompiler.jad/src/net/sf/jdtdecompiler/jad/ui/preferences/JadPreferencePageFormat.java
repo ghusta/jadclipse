@@ -7,7 +7,6 @@ import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.ComboFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.IntegerFieldEditor;
-import org.eclipse.jface.preference.PreferencePage;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
@@ -24,16 +23,12 @@ public class JadPreferencePageFormat extends FieldEditorPreferencePage
         setPreferenceStore(JadPlugin.getDefault().getPreferenceStore());
     }
 
-    /**
-     * @see PreferencePage#createControl(Composite)
-     */
+    @Override
     public void createControl(Composite parent) {
         super.createControl(parent);
     }
 
-    /**
-     * @see FieldEditorPreferencePage#createFieldEditors()
-     */
+    @Override
     protected void createFieldEditors() {
         addField(new BooleanFieldEditor(IJadOptions.OPTION_ANNOTATE,
                 "Generate JVM instructions as comments", getFieldEditorParent()));
@@ -110,9 +105,6 @@ public class JadPreferencePageFormat extends FieldEditorPreferencePage
         addField(indent);
     }
 
-    /**
-     * @see IWorkbenchPreferencePage#init(IWorkbench)
-     */
     public void init(IWorkbench arg0) {
     }
 }

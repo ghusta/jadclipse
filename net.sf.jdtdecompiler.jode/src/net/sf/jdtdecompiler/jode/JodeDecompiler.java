@@ -11,16 +11,13 @@ import net.sf.jode.decompiler.ImportHandler;
 import net.sf.jode.decompiler.TabbedPrintWriter;
 
 /**
- * This implementation of <code>IDecompiler</code> uses JODE as the underlying
- * decompiler.
+ * This implementation of {@link IDecompiler} uses
+ * <a href="http://jode.sourceforge.net/">JODE</a>
+ * as the underlying decompiler.
  */
 public class JodeDecompiler implements IDecompiler {
 
-    /* (non-Javadoc)
-     * @see net.sf.jdtdecompiler.core.IDecompiler#decompile(java.lang.String, boolean, java.lang.String)
-     */
-    public String decompile(String rootPath, boolean isArchive,
-            String fullClassName) {
+    public String decompile(String rootPath, boolean isArchive, String fullClassName) {
         String source = null;
 
         try {
@@ -41,6 +38,5 @@ public class JodeDecompiler implements IDecompiler {
 
         return source;
     }
-
 }
 

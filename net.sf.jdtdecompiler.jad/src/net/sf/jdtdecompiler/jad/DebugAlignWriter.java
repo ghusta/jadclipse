@@ -21,8 +21,8 @@ public class DebugAlignWriter extends Writer {
     // long write;
 
     /**
-     * Constructs a <code>DebugAlignWriter</code> with the specified
-     * <code>writer</code> as its tearget.
+     * Constructs a {@link DebugAlignWriter} with the specified
+     * {@link Writer} as its target.
      */
     public DebugAlignWriter(Writer out) {
         super(out);
@@ -32,9 +32,8 @@ public class DebugAlignWriter extends Writer {
     /**
      * Writes whatever is left in internal buffer to the underlying writer, then
      * flushes and closes it.
-     * 
-     * @see Writer#close()
      */
+    @Override
     public void close() throws IOException {
         if (lineContent.length() != 0) {
             out.write(lineContent.toString());
@@ -46,18 +45,16 @@ public class DebugAlignWriter extends Writer {
 
     /**
      * Flushes the underlying writer.
-     * 
-     * @see Writer#flush()
      */
+    @Override
     public void flush() throws IOException {
         out.flush();
     }
 
     /**
      * Performs necessary alignment logic.
-     * 
-     * @see Writer#write(char[], int, int)
      */
+    @Override
     public void write(char cbuf[], int off, int len) throws IOException {
         // long start = System.currentTimeMillis();
         String aLine;
@@ -117,7 +114,7 @@ public class DebugAlignWriter extends Writer {
      * 
      * @return target line number or -1 if this line doesn't need to be aligned
      */
-    int getAlignTarget(String line) {
+    private int getAlignTarget(String line) {
         if (!line.startsWith("/*")) {
             return -1;
         }
@@ -139,11 +136,11 @@ public class DebugAlignWriter extends Writer {
     /**
      * Removes line comment from the supplied line
      * 
-     * @return a <code>String</code> which is the original <code>line</code>
-     *         with line commens removed. If the original line was a comment
+     * @return a {@link String} which is the original <code>line</code>
+     *         with line comments removed. If the original line was a comment
      *         line empty string is returned
      */
-    String cleanComment(String line) {
+    private String cleanComment(String line) {
         int comment = line.indexOf("//");
 
         if (comment == -1) {
@@ -157,8 +154,8 @@ public class DebugAlignWriter extends Writer {
         return line.substring(0, comment);
     }
 
+    @Override
     public String toString() {
         return out.toString();
     }
-
 }

@@ -14,6 +14,7 @@ public class NoWSFieldEditor extends StringFieldEditor {
         setErrorMessage("White space is not allowed here");
     }
 
+    @Override
     protected boolean doCheckState() {
         String value = getStringValue();
 

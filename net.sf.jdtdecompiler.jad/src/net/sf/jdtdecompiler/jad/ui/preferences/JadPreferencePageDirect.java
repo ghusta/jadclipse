@@ -6,7 +6,6 @@ import net.sf.jdtdecompiler.ui.fieldeditors.NoWSFieldEditor;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.PreferencePage;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
@@ -24,9 +23,7 @@ public class JadPreferencePageDirect extends FieldEditorPreferencePage
         setPreferenceStore(JadPlugin.getDefault().getPreferenceStore());
     }
 
-    /**
-     * @see PreferencePage#createControl(Composite)
-     */
+    @Override
     public void createControl(Composite parent) {
         super.createControl(parent);
         // WorkbenchHelp.setHelp(getControl(), new
@@ -34,9 +31,7 @@ public class JadPreferencePageDirect extends FieldEditorPreferencePage
         // IJavaHelpContextIds.JAVA_EDITOR_PREFERENCE_PAGE));
     }
 
-    /**
-     * @see FieldEditorPreferencePage#createFieldEditors()
-     */
+    @Override
     protected void createFieldEditors() {
         addField(new BooleanFieldEditor(IJadOptions.OPTION_DEAD,
                 "Try to decompile dead parts of code", getFieldEditorParent()));
@@ -114,9 +109,6 @@ public class JadPreferencePageDirect extends FieldEditorPreferencePage
         addField(numpapref);
     }
 
-    /**
-     * @see IWorkbenchPreferencePage#init(IWorkbench)
-     */
     public void init(IWorkbench arg0) {
     }
 

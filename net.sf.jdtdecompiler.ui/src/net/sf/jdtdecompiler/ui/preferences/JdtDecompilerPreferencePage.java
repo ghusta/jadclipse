@@ -6,7 +6,6 @@ import net.sf.jdtdecompiler.ui.JdtDecompilerUiPlugin;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.ComboFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.PreferencePage;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
@@ -25,16 +24,12 @@ public class JdtDecompilerPreferencePage extends FieldEditorPreferencePage
         setPreferenceStore(JdtDecompilerUiPlugin.getDefault().getPreferenceStore());
     }
 
-    /**
-     * @see PreferencePage#createControl(Composite)
-     */
+    @Override
     public void createControl(Composite parent) {
         super.createControl(parent);
     }
 
-    /**
-     * @see FieldEditorPreferencePage#createFieldEditors()
-     */
+    @Override
     protected void createFieldEditors() {
         DecompilerType[] decompilerTypes = DecompilerType.getTypes();
         String[][] entryNamesAndValues = new String[decompilerTypes.length][2];
@@ -55,10 +50,6 @@ public class JdtDecompilerPreferencePage extends FieldEditorPreferencePage
         addField(eclipseFormatter);
     }
 
-    /**
-     * @see IWorkbenchPreferencePage#init(IWorkbench)
-     */
     public void init(IWorkbench arg0) {
     }
-
 }

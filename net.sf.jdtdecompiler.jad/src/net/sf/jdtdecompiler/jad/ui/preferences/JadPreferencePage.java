@@ -4,7 +4,6 @@ import net.sf.jdtdecompiler.jad.JadPlugin;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.PreferencePage;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
@@ -23,16 +22,12 @@ public class JadPreferencePage extends FieldEditorPreferencePage
         setPreferenceStore(JadPlugin.getDefault().getPreferenceStore());
     }
 
-    /**
-     * @see PreferencePage#createControl(Composite)
-     */
+    @Override
     public void createControl(Composite parent) {
         super.createControl(parent);
     }
 
-    /**
-     * @see FieldEditorPreferencePage#createFieldEditors()
-     */
+    @Override
     protected void createFieldEditors() {
         // command line
         StringFieldEditor cmd = new StringFieldEditor(JadPlugin.PREF_CMD,
@@ -57,10 +52,6 @@ public class JadPreferencePage extends FieldEditorPreferencePage
         addField(alwaysUse);
     }
 
-    /**
-     * @see IWorkbenchPreferencePage#init(IWorkbench)
-     */
     public void init(IWorkbench arg0) {
     }
-
 }

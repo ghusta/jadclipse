@@ -11,7 +11,7 @@ import net.sf.jdtdecompiler.core.IDecompiler;
 import org.eclipse.jface.preference.IPreferenceStore;
 
 /**
- * This implementation of <code>IDecompiler</code> uses Jad as the underlying
+ * This implementation of {@link IDecompiler} uses Jad as the underlying
  * decompiler.
  * 
  * @author Vladimir Grishchenko
@@ -19,9 +19,6 @@ import org.eclipse.jface.preference.IPreferenceStore;
  */
 public class JadDecompiler implements IDecompiler {
 
-    /* (non-Javadoc)
-     * @see net.sf.jdtdecompiler.core.IDecompiler#decompile(java.lang.String, boolean, java.lang.String)
-     */
     public String decompile(String rootPath, boolean isArchive, String fullClassName) {
         String source = null;
 

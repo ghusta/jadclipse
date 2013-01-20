@@ -21,6 +21,7 @@ public class DecompiledSourceMapper extends SourceMapper {
         this.decompiler = decompiler;
     }
 
+    @Override
     public char[] findSource(String fullJavaName) {
         char[] source = super.findSource(fullJavaName);
 

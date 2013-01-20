@@ -15,29 +15,16 @@ public class JodePlugin extends AbstractUIPlugin {
     // The shared instance
     private static JodePlugin plugin;
 
-    /**
-     * The constructor
-     */
     public JodePlugin() {
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.eclipse.core.runtime.Plugins#start(org.osgi.framework.BundleContext)
-     */
+    @Override
     public void start(BundleContext context) throws Exception {
         super.start(context);
         plugin = this;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.eclipse.core.runtime.Plugin#stop(org.osgi.framework.BundleContext)
-     */
+    @Override
     public void stop(BundleContext context) throws Exception {
         plugin = null;
         super.stop(context);
@@ -53,8 +40,6 @@ public class JodePlugin extends AbstractUIPlugin {
     }
 
     public static void logError(Throwable t, String message) {
-        getDefault().getLog().log(
-                new Status(Status.ERROR, PLUGIN_ID, 0, message, t));
+        getDefault().getLog().log(new Status(Status.ERROR, PLUGIN_ID, 0, message, t));
     }
-
 }

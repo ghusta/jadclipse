@@ -17,6 +17,7 @@ class DecompileWithAction extends Action {
         this.decompilerType = decompilerType;
     }
 
+    @Override
     public void run() {
         if (editor != null) {
             IDecompiler decompiler = decompilerType.getDecompiler();
