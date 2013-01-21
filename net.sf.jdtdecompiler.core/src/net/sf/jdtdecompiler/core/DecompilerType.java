@@ -91,10 +91,9 @@ public class DecompilerType {
                 .getExtensionPoint(JdtDecompilerCorePlugin.PLUGIN_ID, "decompilers")
                 .getExtensions();
         List<DecompilerType> found = new ArrayList<DecompilerType>();
-        for (int i = 0; i < extensions.length; i++) {
-            IConfigurationElement[] configElements = extensions[i].getConfigurationElements();
-            for (int j = 0; j < configElements.length; j++) {
-                DecompilerType proxy = parseType(configElements[j]);
+        for (IExtension extension : extensions) {
+            for (IConfigurationElement configElement : extension.getConfigurationElements()) {
+                DecompilerType proxy = parseType(configElement);
                 if (proxy != null) {
                     found.add(proxy);
                 }

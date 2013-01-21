@@ -80,9 +80,7 @@ public class DecompiledClassFileEditor extends ClassFileEditor {
 
         MenuManager decompilerMenu = new MenuManager("Decompile With");
         
-        DecompilerType[] types = DecompilerType.getTypes();
-        for (int i = 0; i < types.length; i++) {
-            DecompilerType type = types[i];
+        for (DecompilerType type : DecompilerType.getTypes()) {
             decompilerMenu.add(new DecompileWithAction(this, type));
         }
         decompilerMenu.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));

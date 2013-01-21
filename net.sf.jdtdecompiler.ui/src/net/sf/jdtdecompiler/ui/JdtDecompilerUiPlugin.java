@@ -70,8 +70,7 @@ public class JdtDecompilerUiPlugin extends AbstractUIPlugin {
         IPreferenceStore prefs = getDefault().getPreferenceStore();
         String decompilerId = prefs.getString(PREF_DECOMPILER);
         DecompilerType[] types = DecompilerType.getTypes();
-        for (int i = 0; i < types.length; i++) {
-            DecompilerType type = types[i];
+        for (DecompilerType type : types) {
             if (decompilerId.equals(type.getId())) {
                 return type.getDecompiler();
             }

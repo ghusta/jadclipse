@@ -154,29 +154,26 @@ public class JadDecompiler implements IDecompiler {
         }
 
         // toggles
-        for (int i = 0; i < IJadOptions.TOGGLE_OPTION.length; i++) {
-            if (settings.getBoolean(IJadOptions.TOGGLE_OPTION[i])) {
-                cmdLine.add(IJadOptions.TOGGLE_OPTION[i]);
+        for (String option : IJadOptions.TOGGLE_OPTION) {
+            if (settings.getBoolean(option)) {
+                cmdLine.add(option);
             }
         }
 
         // integers, 0 means disabled
-        int iValue;
-        for (int i = 0; i < IJadOptions.VALUE_OPTION_INT.length; i++) {
-            iValue = settings.getInt(IJadOptions.VALUE_OPTION_INT[i]);
+        for (String option : IJadOptions.VALUE_OPTION_INT) {
+            int iValue = settings.getInt(option);
             if (iValue > 0) {
-                cmdLine.add(IJadOptions.VALUE_OPTION_INT[i] + iValue);
+                cmdLine.add(option + iValue);
             }
         }
 
         // strings, "" means disabled
-        String sValue;
-        for (int i = 0; i < IJadOptions.VALUE_OPTION_STRING.length; i++) {
-            sValue = settings.getString(IJadOptions.VALUE_OPTION_STRING[i]);
+        for (String option : IJadOptions.VALUE_OPTION_STRING) {
+            String sValue = settings.getString(option);
             if (sValue != null && sValue.length() > 0) {
-                cmdLine.add(IJadOptions.VALUE_OPTION_STRING[i] + " " + sValue);
+                cmdLine.add(option + " " + sValue);
             }
-
         }
 
         cmdLine.add(classFileName);

@@ -33,10 +33,11 @@ public class JdtDecompilerPreferencePage extends FieldEditorPreferencePage
     protected void createFieldEditors() {
         DecompilerType[] decompilerTypes = DecompilerType.getTypes();
         String[][] entryNamesAndValues = new String[decompilerTypes.length][2];
-        for (int i = 0; i < decompilerTypes.length; i++) {
-            DecompilerType t = decompilerTypes[i];
-            entryNamesAndValues[i][0] = t.getName();
-            entryNamesAndValues[i][1] = t.getId();
+        int i = 0;
+        for (DecompilerType type : decompilerTypes) {
+            entryNamesAndValues[i][0] = type.getName();
+            entryNamesAndValues[i][1] = type.getId();
+            i++;
         }
         ComboFieldEditor decompiler = new ComboFieldEditor(
                 JdtDecompilerUiPlugin.PREF_DECOMPILER,  "Decompiler: ", entryNamesAndValues,
