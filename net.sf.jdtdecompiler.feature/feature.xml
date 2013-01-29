@@ -2,7 +2,7 @@
 <feature
       id="net.sf.jdtdecompiler.feature"
       label="JDT Decompiler Feature"
-      version="3.4.0.v20090220"
+      version="3.7.0.qualifier"
       provider-name="jadclipse.sf.net">
 
    <description url="http://jadclipse.sf.net">

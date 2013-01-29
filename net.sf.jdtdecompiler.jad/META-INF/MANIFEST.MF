@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: JAD Decompiler Plug-in
 Bundle-SymbolicName: net.sf.jdtdecompiler.jad;singleton:=true
-Bundle-Version: 3.4.0.v20090220
+Bundle-Version: 3.7.0.qualifier
 Bundle-Activator: net.sf.jdtdecompiler.jad.JadPlugin
 Bundle-Vendor: jadclipse.sf.net
 Require-Bundle: org.eclipse.core.runtime,
